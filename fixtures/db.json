@@ -1,0 +1,30 @@
+{
+  "usuarios": [
+    { "id": 1, "nombre": "Dexter", "email": "dexter@example.com", "premium": true }
+  ],
+  "documentos": [
+    { "id": 1, "usuarioId": 1, "tipo": "DNI", "numero": "12345678", "estado": "Verificado" },
+    { "id": 2, "usuarioId": 1, "tipo": "Licencia de Conducir", "numero": "B12345", "estado": "Vencido" },
+    { "id": 3, "usuarioId": 1, "tipo": "CreditCard", "numero": "B12345", "estado": "Vigente" },
+    { "id": 4, "usuarioId": 1, "tipo": "DebitCard", "numero": "A21313", "estado": "Vencido" },
+    { "id": 5, "usuarioId": 1, "tipo": "Metropolitano Card", "numero": "C921441", "estado": "Vigente" },
+    { "id": 6, "usuarioId": 1, "tipo": "Metro de Lima", "numero": "XD12312", "estado": "Vencido" }
+  ],
+  "pagos": [
+    { "id": 1, "usuarioId": 1, "servicio": "Recarga Móvil", "monto": 10.00, "fecha": "2025-10-06" }
+  ],
+  "notificaciones": [
+    { "id": 1, "usuarioId": 1, "mensaje": "Tu licencia vence pronto", "leido": false }
+  ],
+  "posts": [
+    { "id": "1", "title": "a title" },
+    { "id": "2", "title": "another title" }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
