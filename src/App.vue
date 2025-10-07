@@ -1,12 +1,13 @@
 <script setup>
+import HeaderContent from "./shared/presentation/components/header.content.vue";
 </script>
 
 <template>
   <header>
-    HEADER
+    <header-content></header-content>
   </header>
   <body>
-    BODY
+
   </body>
   <footer>
     FOOTER
