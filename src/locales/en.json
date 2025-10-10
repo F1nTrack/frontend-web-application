@@ -68,5 +68,8 @@
     "confirm_required": "Confirm your password.",
     "accept_terms": "You must accept the Terms & Privacy Policy.",
     "email_taken": "This email is already registered."
+  },
+  "footer": {
+    "copyright": "© 2025 KapakId. All rights reserved."
   }
 }

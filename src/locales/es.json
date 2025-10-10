@@ -68,5 +68,8 @@
     "confirm_required": "Confirma tu contraseña.",
     "accept_terms": "Debes aceptar los Términos y la Política de Privacidad.",
     "email_taken": "Este email ya está registrado."
+  },
+  "footer": {
+    "copyright": "© 2025 KapakId. Todos los derechos reservados."
   }
 }

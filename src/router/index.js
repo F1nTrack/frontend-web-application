@@ -8,10 +8,12 @@ const HomeView     = { template: '<div class="p-4">Home</div>' }
 const router = createRouter({
     history: createWebHistory(),
     routes: [
+
         { path: '/', redirect: '/auth/login' },
         { path: '/auth/login', name: 'login', component: LoginView },
         { path: '/auth/register', name: 'register', component: RegisterView },
         { path: '/home', name: 'home', component: HomeView }
+
     ]
 })
 
