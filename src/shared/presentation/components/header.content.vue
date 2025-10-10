@@ -8,14 +8,6 @@ export default {
 </script>
 
 <template>
-  <!--<div>
-    <div class="logo">
-    <img src="https://static.vecteezy.com/system/resources/previews/010/553/129/original/logo-football-vector.jpg">
-    </div>
-    <div class="nameApp">
-      <h3>Peruvian Soccer</h3>
-    </div>
-  </div>-->
   <div class="principal">
     <div class="imagen">
       <img src="https://avatars.githubusercontent.com/u/228631958?s=200&v=4" width="60px" height="60px">
@@ -44,7 +36,6 @@ export default {
   padding: 20px;
   border-radius: 8px;
   width: 1250px;
-  /*border: #c4ccd3 1px solid;*/
 }
 .title{
   color: #000000;

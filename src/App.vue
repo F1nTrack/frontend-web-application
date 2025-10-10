@@ -1,18 +1,5 @@
-<script setup>
-import HeaderContent from "./shared/presentation/components/header.content.vue";
-</script>
-
+//json-server --watch fixtures/db.json --port 4000
 <template>
-  <header>
-    <header-content></header-content>
-  </header>
-  <body>
-
-  </body>
-  <footer>
-    FOOTER
-  </footer>
+  <router-view />
 </template>
 
-<style scoped>
-</style>

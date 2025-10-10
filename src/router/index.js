@@ -1,42 +1,25 @@
-/*import { createRouter, createWebHistory } from 'vue-router'
-import Argentina from "../viajes/components/Argentina.component.vue";
-import Peru from "../viajes/components/Peru.component.vue"
-import Ecuador from "../viajes/components/Ecuador.component.vue"
-import NotFound from "../viajes/components/NotFound.component.vue";
-import Ciudades from "../viajes/components/Ciudades.component.vue"
-import Home from "../viajes/components/Home.component.vue"
+import { createRouter, createWebHistory } from 'vue-router'
+
+const LoginView    = () => import('../domains/auth/presentation/pages/LoginView.vue')
+const RegisterView = () => import('../domains/auth/presentation/pages/RegisterView.vue')
+
+const HomeView     = { template: '<div class="p-4">Home</div>' }
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {path: "/", component: Home},
-        {path:'/peru', component:Peru,
-            children:[
-                {path:'ciudades', component:Ciudades},
-            ]
-        },
-        {path:'/argentina', component:Argentina},
-        {path:'/ecuador', component:Ecuador},
-        {path:'/:pathMatch(.*)*', component:NotFound},
-
-        //Here we can see the named views
-
-        {path:'/login', name: 'login', components:{
-                default:()=>import('../sales/components/Login.component.vue'),
-                LeftSidebar:()=>import('../shared/components/LeftSidebar.vue'),
-            }
-        },
-
-        {path:'/logout', name: 'logout', components:{
-                default:()=>import('../sales/components/Logout.component.vue'),
-                LeftSidebar:()=>import('../shared/components/LeftSidebar.vue'),
-            }
-        },
-
-        {path:'/invoice', name: 'invoice', components:{
-                default:()=>import('../sales/components/Invoice.component.vue'),
-                LeftSidebar:()=>import('../shared/components/LeftSidebar.vue'),
-            }
-        }
+        { path: '/', redirect: '/auth/login' },
+        { path: '/auth/login', name: 'login', component: LoginView },
+        { path: '/auth/register', name: 'register', component: RegisterView },
+        { path: '/home', name: 'home', component: HomeView }
     ]
 })
-export default router*/
+
+router.beforeEach((to) => {
+    if (to.name !== 'home') return true
+    try { if (!JSON.parse(localStorage.getItem('kapakid:user')||'null')) return { name:'login' } }
+    catch { return { name:'login' } }
+    return true
+})
+
+export default router
