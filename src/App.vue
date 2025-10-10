@@ -11,8 +11,10 @@ export default defineComponent({
 </script>
 <template>
   <!--<router-view />-->
+
   <header>
-    <nav-bar></nav-bar>
+    <!--<nav-bar></nav-bar>-->
+    <nav-bar />
   </header>
   <body></body>
   <footer>
@@ -23,3 +25,4 @@ export default defineComponent({
 
 </style>
 
+//json-server --watch fixtures/db.json --port 4000
