@@ -142,7 +142,7 @@ export default {
 }
 
 .sidebar nav li:hover {
-  background: #bbdaef;
+  background: #f5f5f5;
 }
 
 /* Cerrar sesión (efecto restaurado) */
