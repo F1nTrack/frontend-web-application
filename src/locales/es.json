@@ -74,7 +74,7 @@
     "title": "KapakID",
     "subtitle": "Accede a tu identidad digital",
     "email_label": "Email/Teléfono",
-    "email_ph": "tu@email.com",
+  "email_ph": "tu[at]email.com",
     "password_label": "Contraseña",
     "sign_in": "Iniciar sesión",
     "signing_in": "Iniciando sesión..."
