@@ -108,5 +108,28 @@
     "password_mismatch": "Las contraseñas no coinciden.",
     "accept_terms": "Debes aceptar los Términos y Política de Privacidad.",
     "email_taken": "Este email ya está registrado."
+  },
+  "transport-card": {
+    "title": "Transporte",
+    "sub": "Maneja tus tarjetas de transporte y su saldo",
+    "load": "Cargando tus tarjetas",
+    "total_balance": "Saldo Total",
+    "active_cards": "Tarjetas Activas",
+    "no_cards": "No se encontraron tarjetas de transporte",
+    "low_balance": "Saldo Bajo",
+    "actual_balance": "Saldo actual",
+    "recharge": "Recarga"
+
+  },
+  "trans": "Transacciones Recientes",
+  "fast-recharge": {
+    "title": "Recarga Rapida",
+    "subtitle": "Selecciona una tarjeta y recarga saldo fácilmente",
+    "load": "Cargando tarjetas",
+    "manual": "Monto manual",
+    "recharge": "Recargar",
+    "no_cards": "No se encontraron tarjetas validas"
+
   }
+
 }
