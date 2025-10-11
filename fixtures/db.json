@@ -27,6 +27,13 @@
       "email": "prueba3@gmail.com",
       "password": "123456",
       "premium": false
+    },
+    {
+      "id": "mgm4dtfh-x3v6za",
+      "nombre": "TestUser",
+      "email": "testuser@example.com",
+      "password": "pw",
+      "premium": false
     }
   ],
   "documentos": [
