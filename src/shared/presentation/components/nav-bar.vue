@@ -77,7 +77,7 @@ export default {
           <li @click="navigateTo('home')"><User /> Perfil</li>
           <li @click="navigateTo('home')"><FileText /> Documentos</li>
           <li @click="navigateTo('home')"><CreditCard /> Pagos</li>
-          <li @click="navigateTo('home')"><Bus /> Transporte</li>
+          <li @click="navigateTo('transport')"><Bus /> Transporte</li>
           <li @click="navigateTo('home')"><Clock /> Historial</li>
           <li @click="navigateTo('home')"><Bell /> Notificaciones</li>
           <li @click="navigateTo('support')"><HelpCircle /> Soporte</li>

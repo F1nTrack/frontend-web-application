@@ -6,6 +6,7 @@ const RegisterView = () => import('../domains/auth/presentation/pages/RegisterVi
 const HomeView = () => import('../domains/dashboard-context/HomeView.vue')
 const PruebaView = () => import('../views/PruebaView.vue')
 const TechnicalSupportView = () => import('../views/TechnicalSupportView.vue')
+const TransportView=() => import('../../src/domains/transport/presentation/pages/TransportView.vue')
 
 const router = createRouter({
     history: createWebHistory(),
@@ -15,7 +16,8 @@ const router = createRouter({
         { path: '/auth/register', name: 'register', component: RegisterView },
         { path: '/home', name: 'home', component: HomeView },
         { path: '/support', name: 'support', component: TechnicalSupportView },
-        { path: '/prueba', name: 'prueba', component: PruebaView }
+        { path: '/prueba', name: 'prueba', component: PruebaView },
+        { path: '/transport', name: 'transport', component: TransportView },
     ]
 })
 
