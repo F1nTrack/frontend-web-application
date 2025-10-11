@@ -1,73 +1,49 @@
 {
-  "brand": { "title": "KapakID", "tagline": "Identidad digital" },
-
+  "brand": {
+    "title": "KapakID",
+    "tagline": "Identidad digital"
+  },
   "layout": {
     "lang_en": "EN",
     "lang_es": "ES",
-    "footer_cta": "¿No tienes cuenta?",
-    "footer_link_register": "Registrarse",
+    "footer_cta": "¿No tienes una cuenta?",
+    "footer_link_register": "Crear cuenta",
     "footer_have": "¿Ya tienes una cuenta?",
-    "footer_link_login": "Ingresar",
+    "footer_have_account": "¿Ya tienes una cuenta?",
+    "footer_link_login": "Iniciar sesión",
     "forgot": "¿Olvidaste tu contraseña?"
   },
-
-  "login": {
-    "title": "KapakID",
-    "subtitle": "Accede a tu identidad digital",
-
-    "email": "Email/Celular",
-    "password": "Contraseña",
-    "submit": "Ingresar",
-
-    "email_label": "Email/Teléfono",
-    "email_ph": "correo@correo.com",
-    "password_label": "Contraseña",
-    "sign_in": "Ingresar",
-    "signing_in": "Ingresando…"
+  "support": {
+    "title": "Centro de Soporte Técnico",
+    "welcome": "Bienvenido. Aquí puedes encontrar ayuda o contactarnos.",
+    "faq_title": "Preguntas Frecuentes",
+    "contact_cta": "¿Aún necesitas ayuda? Contáctanos"
   },
-
-  "register": {
-    "title": "Crear cuenta",
-    "subtitle": "Inicia tu identidad digital",
-
-    "name": "Nombre completo",
-    "email": "Email",
-    "password": "Contraseña",
-    "confirm": "Confirmar contraseña",
-    "terms": "Acepto los Términos y la Política de Privacidad",
-    "submit": "Crear cuenta",
-
-    "full_name": "Nombre completo",
-    "name_ph": "Juan Pérez",
-    "email_ph": "correo@correo.com",
-    "password_ph": "••••••••",
-    "confirm_password": "Confirmar contraseña",
-    "confirm_ph": "Repite tu contraseña",
-    "accept_terms": "Acepto los Términos y la Política de Privacidad",
-    "create_account": "Crear cuenta",
-    "creating": "Creando…"
-  },
-
-  "errors": {
-    "required": "Este campo es obligatorio.",
-    "email_invalid": "Ingresa un email válido.",
-    "min_length": "Mínimo {n} caracteres.",
-    "password_mismatch": "Las contraseñas no coinciden.",
-    "must_accept": "Debes aceptar los Términos y la Política de Privacidad.",
-    "email_not_found": "Email no encontrado.",
-    "invalid_password": "Contraseña incorrecta.",
-    "unexpected": "Error inesperado. Inténtalo de nuevo.",
-    "email_exists": "Este email ya está registrado.",
-
-    "email_required": "El email es obligatorio.",
-    "password_required": "La contraseña es obligatoria.",
-
-    "name_required": "El nombre es obligatorio.",
-    "name_full": "Ingresa tu nombre completo.",
-    "password_min": "Mínimo 6 caracteres.",
-    "confirm_required": "Confirma tu contraseña.",
-    "accept_terms": "Debes aceptar los Términos y la Política de Privacidad.",
-    "email_taken": "Este email ya está registrado."
+  "help": {
+    "title": "Centro de Ayuda y Soporte",
+    "subtitle": "Encuentra respuestas a tus preguntas y contáctanos si necesitas más ayuda.",
+    "center_title": "Centro de Ayuda",
+    "search_placeholder": "Busca en nuestra base de conocimientos...",
+    "popular_topics": "Temas Populares",
+    "topic_login": "Inicio de Sesión",
+    "topic_dce": "Documentos (DCE)",
+    "topic_recharge": "Recargas y Pagos",
+    "topic_data": "Mis Datos",
+    "contact_title": "Contacto Directo",
+    "contact_subtitle": "¿No encuentras lo que buscas? Nuestro equipo está aquí para ayudarte.",
+    "chat_title": "Chatea con un Agente",
+    "chat_hours": "Disponible de Lunes a Viernes, 9am - 6pm",
+    "chat_button": "Iniciar Chat",
+    "ticket_title": "Crea un Ticket de Soporte",
+    "ticket_response": "Tiempo de respuesta estimado: 24 horas",
+    "ticket_button": "Crear Ticket",
+    "docs_title": "Guías y Documentación",
+    "docs_subtitle": "Consulta nuestros documentos oficiales para información detallada.",
+    "doc_guide": "Guía de Inicio Rápido",
+    "doc_terms": "Términos y Condiciones",
+    "doc_privacy": "Política de Privacidad",
+    "doc_faq": "Preguntas Frecuentes Detalladas",
+    "doc_security": "Prácticas de Seguridad"
   },
   "footer": {
     "copyright": "© 2025 KapakId. Todos los derechos reservados."
@@ -79,7 +55,7 @@
     "payments": "Pagos",
     "transport": "Transporte",
     "history": "Historial",
-    "notifications": "Historial",
+    "notifications": "Notificaciones",
     "support": "Soporte",
     "out": "Cerrar Sesión"
   },
@@ -94,27 +70,43 @@
     "profile": "Perfil",
     "TransportationBalances": "Saldo de transporte"
   },
-  "transport-card": {
-    "title": "Transporte",
-    "sub": "Maneja tus tarjetas de transporte y su saldo",
-    "load": "Cargando tus tarjetas",
-    "total_balance": "Saldo Total",
-    "active_cards": "Tarjetas Activas",
-    "no_cards": "No se encontraron tarjetas de transporte",
-    "low_balance": "Saldo Bajo",
-    "actual_balance": "Saldo actual",
-    "recharge": "Recarga"
-
+  "login": {
+    "title": "KapakID",
+    "subtitle": "Accede a tu identidad digital",
+    "email_label": "Email/Teléfono",
+    "email_ph": "tu@email.com",
+    "password_label": "Contraseña",
+    "sign_in": "Iniciar sesión",
+    "signing_in": "Iniciando sesión..."
   },
-  "trans": "Transacciones Recientes",
-  "fast-recharge": {
-    "title": "Recarga Rapida",
-    "subtitle": "Selecciona una tarjeta y recarga saldo fácilmente",
-    "load": "Cargando tarjetas",
-    "manual": "Monto manual",
-    "recharge": "Recargar",
-    "no_cards": "No se encontraron tarjetas validas"
-
+  "register": {
+    "title": "Crear cuenta",
+    "subtitle": "Inicia tu identidad digital",
+    "full_name": "Nombre completo",
+    "name_ph": "Jane Doe",
+    "email": "Email",
+    "email_ph": "tu@email.com",
+    "password": "Contraseña",
+    "password_ph": "••••••••",
+    "confirm_password": "Confirmar contraseña",
+    "confirm_ph": "Repite tu contraseña",
+    "accept_terms": "Acepto los Términos y Política de Privacidad",
+    "create_account": "Crear cuenta",
+    "creating": "Creando..."
+  },
+  "errors": {
+    "required": "Este campo es obligatorio.",
+    "email_invalid": "Ingresa un email válido.",
+    "email_required": "El email es obligatorio.",
+    "password_required": "La contraseña es obligatoria.",
+    "email_not_found": "Email no encontrado.",
+    "invalid_password": "Contraseña incorrecta.",
+    "unexpected": "Error inesperado. Por favor, inténtalo de nuevo.",
+    "name_required": "El nombre completo es obligatorio.",
+    "password_min": "Mínimo 6 caracteres.",
+    "confirm_required": "Confirma tu contraseña.",
+    "password_mismatch": "Las contraseñas no coinciden.",
+    "accept_terms": "Debes aceptar los Términos y Política de Privacidad.",
+    "email_taken": "Este email ya está registrado."
   }
-
 }

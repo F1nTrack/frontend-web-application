@@ -5,7 +5,10 @@ import router from './router'
 import PrimeVue from 'primevue/config'
 import Material from '@primeuix/themes/material';
 import 'primeicons/primeicons.css';
-import {Button, Card, InputText, SelectButton} from "primevue";
+import Button from 'primevue/button';
+import Card from 'primevue/card';
+import InputText from 'primevue/inputtext';
+import SelectButton from 'primevue/selectbutton';
 import i18n from "./i18n.js";
 
 createApp(App)

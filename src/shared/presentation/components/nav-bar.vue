@@ -1,7 +1,6 @@
-<script setup>
-import { ref } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { RouterLink, useRouter } from 'vue-router' // Add useRouter import
+<script>
+import { ref, computed } from "vue";
+import { useRouter } from "vue-router";
 import {
   Home,
   User,
@@ -13,26 +12,57 @@ import {
   HelpCircle,
   LogOut,
   X,
-  Menu
-} from 'lucide-vue-next'
-import { Button as PvButton } from "primevue"
+  Menu,
+} from "lucide-vue-next";
+import LanguageToggle from "../../ui/login/components/LanguageToggle.component.vue";
 
-const { t } = useI18n()
-const isOpen = ref(false)
-const router = useRouter() // Initialize router instance
-const toggleMenu = () => (isOpen.value = !isOpen.value)
+export default {
+  name: "VerticalNavbar",
+  components: {
+    Home,
+    User,
+    FileText,
+    CreditCard,
+    Bus,
+    Clock,
+    Bell,
+    HelpCircle,
+    LogOut,
+    X,
+    Menu,
+    LanguageToggle,
+  },
+  setup() {
+    const router = useRouter();
+    const isOpen = ref(false);
 
-const logoutAndRedirect = () => {
-  localStorage.removeItem('authToken') // Remove authToken
-  localStorage.removeItem('kapakid:user') // Remove user data to align with router guard
-  router.push('/auth/login') // Redirect to login page
-}
+    const showMenuButton = computed(() => {
+      const routeName = router.currentRoute.value.name;
+      return routeName !== 'login' && routeName !== 'register';
+    });
+    
+    const toggleMenu = () => (isOpen.value = !isOpen.value);
+    
+    const navigateTo = (route) => {
+      router.push({ name: route });
+      isOpen.value = false;
+    };
+    
+    const logout = () => {
+      localStorage.removeItem('kapakid:user');
+      router.push({ name: 'login' });
+      isOpen.value = false;
+    };
+    
+    return { isOpen, toggleMenu, navigateTo, logout, showMenuButton };
+  },
+};
 </script>
 
 <template>
   <div>
     <!-- Botón flotante fijo -->
-    <button class="menu-toggle" @click="toggleMenu" aria-label="Toggle Menu">
+    <button v-if="showMenuButton" class="menu-toggle" @click="toggleMenu" aria-label="Toggle Menu">
       <component :is="isOpen ? X : Menu" size="36" class="menu-icon" />
     </button>
 
@@ -43,175 +73,240 @@ const logoutAndRedirect = () => {
     <aside :class="['sidebar', { open: isOpen }]">
       <nav>
         <ul>
-          <li>
-            <RouterLink :to="{ name: 'home' }" @click="toggleMenu">
-              <Home />
-              {{ t('nav-bar.home') }}
-            </RouterLink>
-          </li>
-
-          <li>
-            <RouterLink to="/documents" @click="toggleMenu">
-              <FileText />
-              {{ t('nav-bar.documents') }}
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/payments" @click="toggleMenu">
-              <CreditCard />
-              {{ t('nav-bar.payments') }}
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/transport" @click="toggleMenu">
-              <Bus />
-              {{ t('nav-bar.transport') }}
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/history" @click="toggleMenu">
-              <Clock />
-              {{ t('nav-bar.history') }}
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/notifications" @click="toggleMenu">
-              <Bell />
-              {{ t('nav-bar.notifications') }}
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/support" @click="toggleMenu">
-              <HelpCircle />
-              {{ t('nav-bar.support') }}
-            </RouterLink>
-          </li>
+          <li @click="navigateTo('home')"><Home /> Inicio</li>
+          <li @click="navigateTo('home')"><User /> Perfil</li>
+          <li @click="navigateTo('home')"><FileText /> Documentos</li>
+          <li @click="navigateTo('home')"><CreditCard /> Pagos</li>
+          <li @click="navigateTo('home')"><Bus /> Transporte</li>
+          <li @click="navigateTo('home')"><Clock /> Historial</li>
+          <li @click="navigateTo('home')"><Bell /> Notificaciones</li>
+          <li @click="navigateTo('support')"><HelpCircle /> Soporte</li>
         </ul>
       </nav>
-      <div class="international">
-        <pv-button class="en-btn" @click="$i18n.locale = 'en'">EN</pv-button>
-        <pv-button class="es-btn" @click="$i18n.locale = 'es'">ES</pv-button>
-      </div>
-      <div class="logout" @click="logoutAndRedirect">
-        <LogOut />
-        <span>{{ t('nav-bar.out') }}</span>
+      
+      <div class="sidebar-footer">
+        <div class="language-section">
+          <LanguageToggle />
+        </div>
+        <div class="logout" @click="logout">
+          <LogOut />
+          <span>Cerrar Sesión</span>
+        </div>
       </div>
     </aside>
   </div>
-<router-view></router-view>
-
 </template>
 
 <style scoped>
-/* Botón flotante fijo */
+/* Botón flotante fijo con diseño moderno */
 .menu-toggle {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 2000;
-  background: #ffffff;
+  top: 24px;
+  left: 24px;
+  z-index: 1000;
+  background: linear-gradient(135deg, #0A3557 0%, #2D9CDB 100%);
   border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
+  box-shadow: 0 8px 32px rgba(10, 53, 87, 0.3), 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(10px);
 }
-.international {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.en-btn,
-.es-btn {
-  background-color: #576b81;
-  color: white;
-  border: none;
-  border-radius: 100px;
-}
+
 .menu-toggle:hover {
-  background: #f0f0f0;
-  transform: scale(1.05);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 40px rgba(10, 53, 87, 0.4), 0 6px 20px rgba(0, 0, 0, 0.15);
 }
+
+.menu-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Ícono con animación */
 .menu-icon {
-  color: #333;
-  transition: color 0.3s ease;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
+
 .menu-toggle:hover .menu-icon {
-  color: #007bff;
+  color: #ffffff;
+  transform: scale(1.1);
 }
+
+/* Sidebar con diseño moderno */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -260px;
-  width: 260px;
+  left: -320px;
+  width: 320px;
   height: 100%;
-  background: #fff;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
-  padding: 90px 20px 30px;
+  background: linear-gradient(180deg, #0A3557 0%, #2D9CDB 50%, #0A3557 100%);
+  box-shadow: 8px 0 40px rgba(10, 53, 87, 0.3), 4px 0 20px rgba(0, 0, 0, 0.2);
+  padding: 100px 0 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: left 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 1500;
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .sidebar.open {
   left: 0;
+  box-shadow: 12px 0 50px rgba(0, 0, 0, 0.4), 6px 0 25px rgba(0, 0, 0, 0.3);
 }
+
 .sidebar nav ul {
   list-style: none;
-  padding: 0;
+  padding: 0 20px;
   margin: 0;
 }
+
 .sidebar nav li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 10px;
+  gap: 16px;
+  padding: 16px 20px;
+  margin: 8px 0;
   cursor: pointer;
-  border-radius: 8px;
-  transition: background 0.3s;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: #e0e6ed;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
 }
-.sidebar nav li a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #333;
-  text-decoration: none;
+
+.sidebar nav li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
   width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
 }
+
+.sidebar nav li:hover::before {
+  left: 100%;
+}
+
 .sidebar nav li:hover {
-  background: #d5e2ea;
-  box-shadow: 10px 5px 40px rgba(82, 159, 159, 0.28);
+  background: linear-gradient(135deg, rgba(45, 156, 219, 0.2), rgba(10, 53, 87, 0.2));
+  color: #ffffff;
+  transform: translateX(8px);
+  box-shadow: 0 4px 20px rgba(45, 156, 219, 0.3);
 }
+
+.sidebar nav li svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.sidebar nav li:hover svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 8px rgba(102, 126, 234, 0.5));
+}
+
+/* Footer del sidebar */
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: auto;
+  padding: 0 20px;
+}
+
+.language-section {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Cerrar sesión con diseño moderno */
 .logout {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: red;
+  gap: 12px;
+  color: #E85B46;
   font-weight: 600;
-  margin-top: 30px;
   cursor: pointer;
-  padding: 12px 10px;
-  border-radius: 8px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: rgba(232, 91, 70, 0.1);
+  border: 1px solid rgba(232, 91, 70, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.logout::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.logout:hover::before {
+  left: 100%;
+}
+
+.logout:hover {
+  background: linear-gradient(135deg, #E85B46, #d44a35);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(232, 91, 70, 0.4);
+}
+
+.logout svg {
+  width: 20px;
+  height: 20px;
   transition: all 0.3s ease;
 }
-.logout:hover {
-  background: red;
-  color: white;
+
+.logout:hover svg {
+  transform: scale(1.1) rotate(-5deg);
 }
+
+/* Overlay con efecto moderno */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(26, 26, 46, 0.8));
+  backdrop-filter: blur(8px);
   z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
 }
 </style>
