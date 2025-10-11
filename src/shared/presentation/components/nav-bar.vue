@@ -1,5 +1,6 @@
 <script>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 import {
   Home,
   User,
@@ -13,6 +14,7 @@ import {
   X,
   Menu,
 } from "lucide-vue-next";
+import LanguageToggle from "../../ui/login/components/LanguageToggle.component.vue";
 
 export default {
   name: "VerticalNavbar",
@@ -28,11 +30,26 @@ export default {
     LogOut,
     X,
     Menu,
+    LanguageToggle,
   },
   setup() {
+    const router = useRouter();
     const isOpen = ref(false);
+    
     const toggleMenu = () => (isOpen.value = !isOpen.value);
-    return { isOpen, toggleMenu };
+    
+    const navigateTo = (route) => {
+      router.push({ name: route });
+      isOpen.value = false;
+    };
+    
+    const logout = () => {
+      localStorage.removeItem('kapakid:user');
+      router.push({ name: 'login' });
+      isOpen.value = false;
+    };
+    
+    return { isOpen, toggleMenu, navigateTo, logout };
   },
 };
 </script>
@@ -51,19 +68,25 @@ export default {
     <aside :class="['sidebar', { open: isOpen }]">
       <nav>
         <ul>
-          <li><Home /> Inicio</li>
-          <li><User /> Perfil</li>
-          <li><FileText /> Documentos</li>
-          <li><CreditCard /> Pagos</li>
-          <li><Bus /> Transporte</li>
-          <li><Clock /> Historial</li>
-          <li><Bell /> Notificaciones</li>
-          <li><HelpCircle /> Soporte</li>
+          <li @click="navigateTo('home')"><Home /> Inicio</li>
+          <li @click="navigateTo('home')"><User /> Perfil</li>
+          <li @click="navigateTo('home')"><FileText /> Documentos</li>
+          <li @click="navigateTo('home')"><CreditCard /> Pagos</li>
+          <li @click="navigateTo('home')"><Bus /> Transporte</li>
+          <li @click="navigateTo('home')"><Clock /> Historial</li>
+          <li @click="navigateTo('home')"><Bell /> Notificaciones</li>
+          <li @click="navigateTo('support')"><HelpCircle /> Soporte</li>
         </ul>
       </nav>
-      <div class="logout">
-        <LogOut />
-        <span>Cerrar Sesión</span>
+      
+      <div class="sidebar-footer">
+        <div class="language-section">
+          <LanguageToggle />
+        </div>
+        <div class="logout" @click="logout">
+          <LogOut />
+          <span>Cerrar Sesión</span>
+        </div>
       </div>
     </aside>
   </div>
@@ -145,6 +168,20 @@ export default {
   background: #bbdaef;
 }
 
+/* Footer del sidebar */
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: auto;
+}
+
+.language-section {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
 /* Cerrar sesión (efecto restaurado) */
 .logout {
   display: flex;
@@ -152,7 +189,6 @@ export default {
   gap: 10px;
   color: red;
   font-weight: 600;
-  margin-top: 30px;
   cursor: pointer;
   padding: 12px 10px;
   border-radius: 8px;

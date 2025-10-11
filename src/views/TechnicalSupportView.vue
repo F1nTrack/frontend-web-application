@@ -1,6 +1,10 @@
 <template>
     
   <div class="kapakid-page-content">
+    <!-- Botón de idioma en la esquina superior derecha -->
+    <div class="language-toggle-container">
+      <LanguageToggle />
+    </div>
     
     <h1 class="page-header">{{ $t('help.title') }}</h1>
     <p class="page-subtitle">{{ $t('help.subtitle') }}</p>
@@ -67,9 +71,13 @@
 </template>
 
 <script>
+import LanguageToggle from '../shared/ui/login/components/LanguageToggle.component.vue';
 
 export default {
   name: 'SoporteAyuda',
+  components: {
+    LanguageToggle
+  },
   
   data() {
     return {
@@ -89,7 +97,14 @@ export default {
 /* ================================ */
 /* ESTILOS GENERALES Y LAYOUT BASE  */
 /* ================================ */
-.kapakid-page-content { max-width: 1200px; margin: 0 auto; padding: 30px; font-family: sans-serif; }
+.kapakid-page-content { max-width: 1200px; margin: 0 auto; padding: 30px; font-family: sans-serif; position: relative; }
+
+.language-toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
 .page-header { font-size: 2em; font-weight: 600; color: #1a1a1a; margin-bottom: 5px; }
 .page-subtitle { color: #6a6a6a; margin-bottom: 30px; font-size: 1.1em; }
 .card { background: #ffffff; border-radius: 12px; padding: 25px; margin-bottom: 30px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03); }
