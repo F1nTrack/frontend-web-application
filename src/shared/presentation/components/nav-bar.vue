@@ -96,7 +96,7 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
       </div>
     </aside>
   </div>
-
+<router-view></router-view>
 
 </template>
 
