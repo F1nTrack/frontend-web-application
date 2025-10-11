@@ -11,11 +11,11 @@ import {
   HelpCircle,
   LogOut,
   X,
+  Menu,
 } from "lucide-vue-next";
 
 export default {
   name: "VerticalNavbar",
-  methods: {Menu, X},
   components: {
     Home,
     User,
