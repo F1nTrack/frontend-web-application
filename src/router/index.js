@@ -2,8 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const LoginView    = () => import('../domains/auth/presentation/pages/LoginView.vue')
 const RegisterView = () => import('../domains/auth/presentation/pages/RegisterView.vue')
+const TransportView = () => import('../domains/transport/presentation/pages/TransportView.vue')
 
-const HomeView     = { template: '<div class="p-4">Home</div>' }
+const HomeView     = { template: '<div class="p-4"><slot/></div>' }
 
 const router = createRouter({
     history: createWebHistory(),
@@ -11,7 +12,9 @@ const router = createRouter({
         { path: '/', redirect: '/auth/login' },
         { path: '/auth/login', name: 'login', component: LoginView },
         { path: '/auth/register', name: 'register', component: RegisterView },
-        { path: '/home', name: 'home', component: HomeView }
+        { path: '/home', name: 'home', component: HomeView },
+        { path: '/transport', name: 'transport', component: TransportView }
+
     ]
 })
 

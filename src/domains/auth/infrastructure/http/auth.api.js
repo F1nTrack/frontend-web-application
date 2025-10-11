@@ -1,5 +1,5 @@
 ﻿
-import { http } from '@/shared/services/httpClient';
+import { http } from '../../../../shared/services/httpClient.js';
 
 
 export async function apiFindUserByEmail(email) {
