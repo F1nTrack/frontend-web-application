@@ -1,7 +1,7 @@
-<script setup >
+<script setup>
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router' // Add useRouter import
 import {
   Home,
   User,
@@ -15,11 +15,18 @@ import {
   X,
   Menu
 } from 'lucide-vue-next'
-import {Button as PvButton} from "primevue";
+import { Button as PvButton } from "primevue"
 
 const { t } = useI18n()
 const isOpen = ref(false)
+const router = useRouter() // Initialize router instance
 const toggleMenu = () => (isOpen.value = !isOpen.value)
+
+const logoutAndRedirect = () => {
+  localStorage.removeItem('authToken') // Remove authToken
+  localStorage.removeItem('kapakid:user') // Remove user data to align with router guard
+  router.push('/auth/login') // Redirect to login page
+}
 </script>
 
 <template>
@@ -90,7 +97,7 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
         <pv-button class="en-btn" @click="$i18n.locale = 'en'">EN</pv-button>
         <pv-button class="es-btn" @click="$i18n.locale = 'es'">ES</pv-button>
       </div>
-      <div class="logout">
+      <div class="logout" @click="logoutAndRedirect">
         <LogOut />
         <span>{{ t('nav-bar.out') }}</span>
       </div>

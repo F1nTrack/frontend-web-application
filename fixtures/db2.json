@@ -1,0 +1,58 @@
+{
+  "dashboard": {
+    "user": {
+      "name": "Pedro Sánchez",
+      "dni": "98765432",
+      "email": "pedro.sanchez@email.com",
+      "role": "Usuario"
+    },
+    "documents": {
+      "active": 6,
+      "changeThisMonth": 3,
+      "items": [
+        { "name": "Identidad Digital (DNI)", "status": "Activo" },
+        { "name": "Licencia de Conducir", "status": "Pendiente" },
+        { "name": "Pasaporte", "status": "Activo" },
+        { "name": "Tarjeta Sanitaria", "status": "Activo" },
+        { "name": "Carné Universitario", "status": "Vencido" },
+        { "name": "Certificado de Antecedentes", "status": "Activo" },
+        { "name": "Seguro Vehicular", "status": "Pendiente" },
+        { "name": "Certificado de Estudios", "status": "Activo" }
+      ]
+    },
+    "balance": {
+      "total": 125.50,
+      "currency": "S/",
+      "type": "En transporte"
+    },
+    "pendingPayments": {
+      "count": 6,
+      "note": "Vencen pronto",
+      "items": [
+        "Renovación DNI",
+        "Multa de tránsito",
+        "Pago de arbitrios",
+        "Tasa de emisión de pasaporte",
+        "Servicio de agua (vencido)",
+        "Pago de luz"
+      ]
+    },
+    "profileCompletion": 88,
+    "transportCards": [
+      { "name": "Metropolitano", "status": "Activo", "balance": 40 },
+      { "name": "Lima Bus", "status": "Activo", "balance": 15.5 },
+      { "name": "Tren Eléctrico", "status": "Inactivo", "balance": 4.75 },
+      { "name": "Corredores Viales", "status": "Activo", "balance": 0 },
+      { "name": "Card Bus Express", "status": "Pendiente", "balance": 12.25 }
+    ],
+    "notifications": [
+      { "type": "alert", "message": "Documento próximo a vencer: Licencia de conducir vence el 25 de octubre", "priority": "high" },
+      { "type": "info", "message": "Nueva función disponible: Recarga automática de transporte", "priority": "low" },
+      { "type": "warning", "message": "Saldo bajo en tarjeta Lima Bus. Sugerimos recargar.", "priority": "medium" },
+      { "type": "alert", "message": "Pago pendiente: La multa de tránsito tiene descuento por pronto pago hasta mañana.", "priority": "high" },
+      { "type": "info", "message": "Registro exitoso de Certificado de Antecedentes.", "priority": "low" },
+      { "type": "alert", "message": "Tu Tarjeta Metropolitano está por expirar en 3 días.", "priority": "high" },
+      { "type": "info", "message": "Nuevo método de pago disponible para tus transportes.", "priority": "low" }
+    ]
+  }
+}
