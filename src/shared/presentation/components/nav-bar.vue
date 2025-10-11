@@ -12,12 +12,14 @@ import {
   HelpCircle,
   LogOut,
   X,
-  Menu,
+  Menu
 } from "lucide-vue-next";
 import LanguageToggle from "../../ui/login/components/LanguageToggle.component.vue";
 
+
 export default {
   name: "VerticalNavbar",
+  methods: {Menu},
   components: {
     Home,
     User,
