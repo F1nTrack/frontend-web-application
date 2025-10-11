@@ -71,5 +71,59 @@
   },
   "footer": {
     "copyright": "© 2025 KapakId. All rights reserved."
+  },
+  "support": {
+    "title": "Technical Support Center",
+    "welcome": "Welcome. Here you can find help or contact us.",
+    "faq_title": "Frequently Asked Questions",
+    "contact_cta": "Still need help? Contact us"
+  },
+   "help": {
+    "title": "Help & Support Center",
+    "subtitle": "Find answers to your questions and contact us if you need more help.",
+    "center_title": "Help Center",
+    "search_placeholder": "Search our knowledge base...",
+    "popular_topics": "Popular Topics",
+    "topic_login": "Login Issues",
+    "topic_dce": "Documents (DCE)",
+    "topic_recharge": "Recharges & Payments",
+    "topic_data": "My Data",
+    "contact_title": "Direct Contact",
+    "contact_subtitle": "Can't find what you're looking for? Our team is here to help you.",
+    "chat_title": "Chat with an Agent",
+    "chat_hours": "Available Monday to Friday, 9am - 6pm",
+    "chat_button": "Start Chat",
+    "ticket_title": "Create a Support Ticket",
+    "ticket_response": "Estimated response time: 24 hours",
+    "ticket_button": "Create Ticket",
+    "docs_title": "Guides & Documentation",
+    "docs_subtitle": "Consult our official documents for detailed information.",
+    "doc_guide": "Quick Start Guide",
+    "doc_terms": "Terms and Conditions",
+    "doc_privacy": "Privacy Policy",
+    "doc_faq": "Detailed FAQ",
+    "doc_security": "Security Practices"
+  },
+  "nav-bar": {
+    "home": "Home",
+    "profile": "Profile",
+    "documents": "Documents",
+    "payments": "Payments",
+    "transport": "Transport",
+    "history": "History",
+    "notifications": "Notifications",
+    "support": "Technical Support",
+    "out": "Log out"
+  },
+  "welcome": "welcome",
+  "dashboard": {
+    "welcome": "Welcome",
+    "manageIdentity": "Manage Identity",
+    "balance": "Balance",
+    "ActiveDocuments": "Active Documents",
+    "notifica": "Alerts and Notifications",
+    "PendingPayments": "Pending Payments",
+    "profile": "Profile",
+    "TransportationBalances": "TransportationBalances"
   }
 }

@@ -1,19 +1,21 @@
+
 import { createRouter, createWebHistory } from 'vue-router'
 
-const LoginView    = () => import('../domains/auth/presentation/pages/LoginView.vue')
+const LoginView = () => import('../domains/auth/presentation/pages/LoginView.vue')
 const RegisterView = () => import('../domains/auth/presentation/pages/RegisterView.vue')
-
-const HomeView     = { template: '<div class="p-4">Home</div>' }
+const HomeView = () => import('../domains/dashboard-context/HomeView.vue')
+const PruebaView = () => import('../views/PruebaView.vue')
+const TechnicalSupportView = () => import('../views/TechnicalSupportView.vue')
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-
         { path: '/', redirect: '/auth/login' },
         { path: '/auth/login', name: 'login', component: LoginView },
         { path: '/auth/register', name: 'register', component: RegisterView },
-        { path: '/home', name: 'home', component: HomeView }
-
+        { path: '/home', name: 'home', component: HomeView },
+        { path: '/support', name: 'support', component: TechnicalSupportView },
+        { path: '/prueba', name: 'prueba', component: PruebaView }
     ]
 })
 
