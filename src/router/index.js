@@ -3,7 +3,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 const LoginView    = () => import('../domains/auth/presentation/pages/LoginView.vue')
 const RegisterView = () => import('../domains/auth/presentation/pages/RegisterView.vue')
 
-const HomeView=()=>import('../views/HomeView.vue')
+const HomeView=()=>import('../domains/dashboard-context/HomeView.vue')
+
+const PruebaView=()=>import('../views/PruebaView.vue')
+
 //const navBar = ()=>import('../shared/presentation/components/nav-bar.vue')
 
 const router = createRouter({
@@ -13,6 +16,7 @@ const router = createRouter({
         { path: '/auth/login', name: 'login', component: LoginView },
         { path: '/auth/register', name: 'register', component: RegisterView },
         { path: '/home', name: 'home', component:HomeView },
+        {path: '/documents', name: 'documents', component:PruebaView },
 
 
     ]

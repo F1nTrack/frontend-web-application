@@ -1,125 +1,103 @@
 {
-  "usuarios": [
-    {
-      "id": "1",
-      "nombre": "Dexter",
-      "email": "dexter@example.com",
-      "password": "123456",
-      "premium": true
+  "dashboard": {
+    "user": {
+      "name": "Pedro Sánchez",
+      "dni": "98765432"
     },
-    {
-      "id": "2322",
-      "nombre": "fabri",
-      "email": "ejemplo2@gmail.com",
-      "premium": false,
-      "password": "123"
+    "documents": {
+      "active": 4,
+      "changeThisMonth": 2,
+      "items": [
+        {
+          "name": "Identidad Digital (DNI)",
+          "status": "Activo"
+        },
+        {
+          "name": "Licencia de Conducir",
+          "status": "Pendiente"
+        },
+        {
+          "name": "Pasaporte",
+          "status": "Activo"
+        },
+        {
+          "name": "Tarjeta Sanitaria",
+          "status": "Activo"
+        },
+        {
+          "name": "Carné Universitario",
+          "status": "Vencido"
+        },
+        {
+          "name": "Certificado de Antecedentes",
+          "status": "Activo"
+        }
+      ]
     },
-    {
-      "id": "435a",
-      "nombre": "prueba",
-      "email": "prueba1@gmail.com",
-      "password": "123",
-      "premium": false
+    "balance": {
+      "total": 60.25,
+      "currency": "S/",
+      "type": "En transporte"
     },
-    {
-      "id": "e5bf",
-      "nombre": "Prueba5",
-      "email": "prueba3@gmail.com",
-      "password": "123456",
-      "premium": false
+    "pendingPayments": {
+      "count": 4,
+      "note": "Vencen pronto",
+      "items": [
+        "Renovación DNI",
+        "Multa de tránsito",
+        "Pago de arbitrios",
+        "Tasa de emisión de pasaporte",
+        "Servicio de agua (vencido)"
+      ]
     },
-    {
-      "id": "88e1",
-      "nombre": "Raul",
-      "email": "raultasayco@gmail.com",
-      "password": "qwerty.123",
-      "premium": false
-    }
-  ],
-  "documentos": [
-    {
-      "id": "1",
-      "usuarioId": 1,
-      "tipo": "DNI",
-      "numero": "12345678",
-      "estado": "Verificado"
-    },
-    {
-      "id": "2",
-      "usuarioId": 1,
-      "tipo": "Licencia de Conducir",
-      "numero": "B12345",
-      "estado": "Vencido"
-    },
-    {
-      "id": "3",
-      "usuarioId": 1,
-      "tipo": "CreditCard",
-      "numero": "B12345",
-      "estado": "Vigente"
-    },
-    {
-      "id": "4",
-      "usuarioId": 1,
-      "tipo": "DebitCard",
-      "numero": "A21313",
-      "estado": "Vencido"
-    },
-    {
-      "id": "5",
-      "usuarioId": 1,
-      "tipo": "Metropolitano Card",
-      "numero": "C921441",
-      "estado": "Vigente"
-    },
-    {
-      "id": "6",
-      "usuarioId": 1,
-      "tipo": "Metro de Lima",
-      "numero": "XD12312",
-      "estado": "Vencido"
-    }
-  ],
-  "pagos": [
-    {
-      "id": "1",
-      "usuarioId": 1,
-      "servicio": "Recarga Móvil",
-      "monto": 10,
-      "fecha": "2025-10-06"
-    }
-  ],
-  "notificaciones": [
-    {
-      "id": "1",
-      "usuarioId": 1,
-      "mensaje": "Tu licencia vence pronto",
-      "leido": false
-    }
-  ],
-  "posts": [
-    {
-      "id": "1",
-      "title": "a title"
-    },
-    {
-      "id": "2",
-      "title": "another title"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
-    },
-    {
-      "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
+    "profileCompletion": 95,
+    "transportCards": [
+      {
+        "name": "Metropolitano",
+        "status": "Activo",
+        "balance": 40.00
+      },
+      {
+        "name": "Lima Bus",
+        "balance": 15.50
+      },
+      {
+        "name": "Tren Eléctrico",
+        "status": "Inactivo",
+        "balance": 4.75
+      },
+      {
+        "name": "Corredores Viales",
+        "status": "Activo",
+        "balance": 0.00
+      }
+    ],
+    "notifications": [
+      {
+        "type": "alert",
+        "message": "Documento próximo a vencer: Tu Licencia vence el 25 de octubre",
+        "priority": "high"
+      },
+      {
+        "type": "info",
+        "message": "Nueva función disponible: Recarga automática de transporte",
+        "priority": "low"
+      },
+      {
+        "type": "warning",
+        "message": "Saldo bajo en tarjeta Lima Bus. Sugerimos recargar.",
+        "priority": "medium"
+      },
+      {
+        "type": "alert",
+        "message": "Pago pendiente: La multa de tránsito tiene un descuento por pronto pago hasta mañana.",
+        "priority": "high"
+      },
+      {
+        "type": "info",
+        "message": "Registro exitoso de Certificado de Antecedentes.",
+        "priority": "low"
+      }
+    ]
   }
 }

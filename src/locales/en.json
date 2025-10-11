@@ -83,5 +83,15 @@
     "support": "Technical Support",
     "out": "Log out"
   },
-  "welcome": "welcome"
+  "welcome": "welcome",
+  "dashboard": {
+    "welcome": "Welcome",
+    "manageIdentity": "Manage Identity",
+    "balance": "Balance",
+    "ActiveDocuments": "Active Documents",
+    "notifica": "Alerts and Notifications",
+    "PendingPayments": "Pending Payments",
+    "profile": "Profile",
+    "TransportationBalances": "TransportationBalances"
+  }
 }

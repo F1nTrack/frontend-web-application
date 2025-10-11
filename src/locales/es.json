@@ -83,5 +83,15 @@
     "support": "Soporte",
     "out": "Cerrar Sesión"
   },
-  "welcome": "bienvenido"
+  "welcome": "bienvenido",
+  "dashboard": {
+    "welcome": "Bienvenido",
+    "manageIdentity": "Administrar identidad",
+    "balance": "Saldo",
+    "ActiveDocuments": "Documentos activos",
+    "notifica": "Alertas y Notificaciones",
+    "PendingPayments": "Pagos Pendientes",
+    "profile": "Perfil",
+    "TransportationBalances": "Saldo de transporte"
+  }
 }
