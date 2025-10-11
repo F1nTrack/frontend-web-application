@@ -1,41 +1,23 @@
-<script setup>
-
-defineProps({
-  currency: { type: String, required: true },
-  total: { type: Number, required: true },
-  type: { type: String, required: true }
-});
-</script>
-
 <template>
-  <pv-card>
-    <template #header>
-      <h3>{{$t('dashboard.balance')}}</h3>
-    </template>
-    <div>
-      <p>{{ currency }}{{ total }} {{ type }}</p>
-    </div>
-  </pv-card>
+  <div class="card">
+    <h3>Balance</h3>
+    <p>S/125.50 En transporte</p>
+  </div>
 </template>
 
 <style scoped>
-:deep(.p-card) {
-  background-color: #ffffff;
+.card {
+  background: #ffffff;
   border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
   text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-h3 {
-  color: #000000; /* Pastel cyan/blue */
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
-
-p {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #000000; /* Darker pastel blue for emphasis */
-}
+h3 { margin-bottom: 12px; color: #333; font-size: 1.2rem; }
+p { font-size: 1.8rem; font-weight: bold; color: #1e88e5; }
 </style>

@@ -42,12 +42,7 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
               {{ t('nav-bar.home') }}
             </RouterLink>
           </li>
-          <li>
-            <RouterLink to="/profile" @click="toggleMenu">
-              <User />
-              {{ t('nav-bar.profile') }}
-            </RouterLink>
-          </li>
+
           <li>
             <RouterLink to="/documents" @click="toggleMenu">
               <FileText />
