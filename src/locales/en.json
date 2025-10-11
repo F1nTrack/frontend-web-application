@@ -4,9 +4,10 @@
   "layout": {
     "lang_en": "EN",
     "lang_es": "ES",
-    "footer_cta": "Don’t have an account?",
+    "footer_cta": "Don't have an account?",
     "footer_link_register": "Create account",
     "footer_have": "Already have an account?",
+    "footer_have_account": "Already have an account?",
     "footer_link_login": "Sign in",
     "forgot": "Forgot your password?"
   },
@@ -20,7 +21,7 @@
     "submit": "Sign in",
 
     "email_label": "Email/Phone",
-    "email_ph": "you@email.com",
+  "email_ph": "you[at]email.com",
     "password_label": "Password",
     "sign_in": "Sign in",
     "signing_in": "Signing in…"
@@ -39,7 +40,7 @@
 
     "full_name": "Full name",
     "name_ph": "Jane Doe",
-    "email_ph": "you@email.com",
+  "email_ph": "you[at]email.com",
     "password_ph": "••••••••",
     "confirm_password": "Confirm password",
     "confirm_ph": "Repeat your password",
@@ -71,6 +72,38 @@
   },
   "footer": {
     "copyright": "© 2025 KapakId. All rights reserved."
+  },
+  "support": {
+    "title": "Technical Support Center",
+    "welcome": "Welcome. Here you can find help or contact us.",
+    "faq_title": "Frequently Asked Questions",
+    "contact_cta": "Still need help? Contact us"
+  },
+   "help": {
+    "title": "Help & Support Center",
+    "subtitle": "Find answers to your questions and contact us if you need more help.",
+    "center_title": "Help Center",
+    "search_placeholder": "Search our knowledge base...",
+    "popular_topics": "Popular Topics",
+    "topic_login": "Login Issues",
+    "topic_dce": "Documents (DCE)",
+    "topic_recharge": "Recharges & Payments",
+    "topic_data": "My Data",
+    "contact_title": "Direct Contact",
+    "contact_subtitle": "Can't find what you're looking for? Our team is here to help you.",
+    "chat_title": "Chat with an Agent",
+    "chat_hours": "Available Monday to Friday, 9am - 6pm",
+    "chat_button": "Start Chat",
+    "ticket_title": "Create a Support Ticket",
+    "ticket_response": "Estimated response time: 24 hours",
+    "ticket_button": "Create Ticket",
+    "docs_title": "Guides & Documentation",
+    "docs_subtitle": "Consult our official documents for detailed information.",
+    "doc_guide": "Quick Start Guide",
+    "doc_terms": "Terms and Conditions",
+    "doc_privacy": "Privacy Policy",
+    "doc_faq": "Detailed FAQ",
+    "doc_security": "Security Practices"
   },
   "nav-bar": {
     "home": "Home",
