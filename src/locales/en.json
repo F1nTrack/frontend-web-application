@@ -4,9 +4,10 @@
   "layout": {
     "lang_en": "EN",
     "lang_es": "ES",
-    "footer_cta": "Don’t have an account?",
+    "footer_cta": "Don't have an account?",
     "footer_link_register": "Create account",
     "footer_have": "Already have an account?",
+    "footer_have_account": "Already have an account?",
     "footer_link_login": "Sign in",
     "forgot": "Forgot your password?"
   },
