@@ -1,11 +1,11 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
-const LoginView    = () => import('../domains/auth/presentation/pages/LoginView.vue')
-const RegisterView = () => import('../domains/auth/presentation/pages/RegisterView.vue')
-const HomeView     = () => import('../domains/dashboard-context/HomeView.vue')
-const PruebaView   = () => import('../views/PruebaView.vue')
-const TechnicalSupportView = () => import('../views/TechnicalSupportView.vue')
 
+const LoginView = () => import('../domains/auth/presentation/pages/LoginView.vue')
+const RegisterView = () => import('../domains/auth/presentation/pages/RegisterView.vue')
+const HomeView = () => import('../domains/dashboard-context/HomeView.vue')
+const PruebaView = () => import('../views/PruebaView.vue')
+const TechnicalSupportView = () => import('../views/TechnicalSupportView.vue')
 
 const router = createRouter({
     history: createWebHistory(),

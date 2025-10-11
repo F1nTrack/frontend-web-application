@@ -3,6 +3,15 @@
     "title": "KapakID",
     "tagline": "Identidad digital"
   },
+  "layout": {
+    "lang_en": "EN",
+    "lang_es": "ES",
+    "footer_cta": "¿No tienes una cuenta?",
+    "footer_link_register": "Crear cuenta",
+    "footer_have": "¿Ya tienes una cuenta?",
+    "footer_link_login": "Iniciar sesión",
+    "forgot": "¿Olvidaste tu contraseña?"
+  },
   "support": {
     "title": "Centro de Soporte Técnico",
     "welcome": "Bienvenido. Aquí puedes encontrar ayuda o contactarnos.",
