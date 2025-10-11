@@ -108,5 +108,30 @@
     "password_mismatch": "Las contraseñas no coinciden.",
     "accept_terms": "Debes aceptar los Términos y Política de Privacidad.",
     "email_taken": "Este email ya está registrado."
+  },
+  "footer": {
+    "copyright": "© 2025 KapakId. Todos los derechos reservados."
+  },
+  "nav-bar": {
+    "home": "Inicio",
+    "profile": "Perfil",
+    "documents": "Documentos",
+    "payments": "Pagos",
+    "transport": "Transporte",
+    "history": "Historial",
+    "notifications": "Historial",
+    "support": "Soporte",
+    "out": "Cerrar Sesión"
+  },
+  "welcome": "bienvenido",
+  "dashboard": {
+    "welcome": "Bienvenido",
+    "manageIdentity": "Administrar identidad",
+    "balance": "Saldo",
+    "ActiveDocuments": "Documentos activos",
+    "notifica": "Alertas y Notificaciones",
+    "PendingPayments": "Pagos Pendientes",
+    "profile": "Perfil",
+    "TransportationBalances": "Saldo de transporte"
   }
 }

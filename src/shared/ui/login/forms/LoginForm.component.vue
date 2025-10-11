@@ -1,4 +1,4 @@
-﻿<script setup>
+<script setup>
 import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
@@ -97,137 +97,23 @@ async function onSubmit() {
 </template>
 
 <style scoped>
-.form{ 
-  display: grid; 
-  gap: 24px; 
-}
-
-.field{ 
-  display: grid; 
-  gap: 12px; 
-  position: relative;
-}
-
-.label{ 
-  font-size: 16px; 
-  color: #374151; 
-  font-weight: 700;
-  margin-bottom: 4px;
-  font-family: 'Roboto', sans-serif;
-}
-
+.form{ display:grid; gap:18px; }
+.field{ display:grid; gap:8px; }
+.label{ font-size:15px; color:#596080; font-weight:800; }
 .input{
-  background: rgba(255, 255, 255, 0.8); 
-  border: 2px solid rgba(229, 231, 235, 0.5); 
-  color: #1f2937;
-  border-radius: 16px; 
-  padding: 18px 20px; 
-  outline: none; 
-  width: 100%;
-  font-size: 16px; 
-  font-weight: 500;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  backdrop-filter: blur(10px);
-  position: relative;
+  background:#f5f7fd; border:1px solid #e3e8f5; color:#1b2559;
+  border-radius:14px; padding:14px 16px; outline:none; width:100%;
+  font-size:16px; transition: box-shadow .2s, border-color .2s;
 }
-
-.input::placeholder {
-  color: #9ca3af;
-  font-weight: 400;
-}
-
-.input:focus{ 
-  border-color: #2D9CDB; 
-  box-shadow: 
-    0 0 0 4px rgba(45, 156, 219, 0.1),
-    0 8px 25px rgba(45, 156, 219, 0.15);
-  background: rgba(255, 255, 255, 0.95);
-  transform: translateY(-2px);
-}
-
-.is-invalid{ 
-  border-color: #E85B46 !important; 
-  box-shadow: 
-    0 0 0 4px rgba(232, 91, 70, 0.1),
-    0 8px 25px rgba(232, 91, 70, 0.15) !important; 
-}
-
+.input:focus{ border-color:#4253ff; box-shadow:0 0 0 4px rgba(66,83,255,.12); }
+.is-invalid{ border-color:#dc2626 !important; box-shadow:0 0 0 3px rgba(220,38,38,.12) !important; }
 .primary-btn{
-  margin-top: 8px; 
-  width: 100%; 
-  background: linear-gradient(135deg, #0A3557 0%, #2D9CDB 100%);
-  color: #fff;
-  border: none; 
-  border-radius: 16px; 
-  padding: 18px 24px; 
-  font-weight: 700;
-  cursor: pointer; 
-  font-size: 16px; 
-  box-shadow: 
-    0 8px 25px rgba(10, 53, 87, 0.3),
-    0 4px 12px rgba(45, 156, 219, 0.2);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-  overflow: hidden;
-  font-family: 'Roboto', sans-serif;
+  margin-top:4px; width:100%; background:#0e1329; color:#fff;
+  border:none; border-radius:14px; padding:16px 18px; font-weight:900;
+  cursor:pointer; font-size:16px; box-shadow:0 18px 36px rgba(14,19,41,.18);
 }
-
-.primary-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.primary-btn:hover::before {
-  left: 100%;
-}
-
-.primary-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 
-    0 12px 35px rgba(10, 53, 87, 0.4),
-    0 6px 16px rgba(45, 156, 219, 0.3);
-}
-
-.primary-btn:active {
-  transform: translateY(-1px);
-}
-
-.primary-btn[disabled]{ 
-  opacity: 0.6; 
-  cursor: not-allowed;
-  transform: none !important;
-  box-shadow: 
-    0 4px 12px rgba(10, 53, 87, 0.2),
-    0 2px 6px rgba(45, 156, 219, 0.1) !important;
-}
-
-.error{ 
-  color: #E85B46; 
-  font-weight: 600; 
-  font-size: 14px;
-  margin-top: 4px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-family: 'Roboto', sans-serif;
-}
-
-.error::before {
-  content: '⚠';
-  font-size: 12px;
-}
-
-.mt-2{ 
-  margin-top: 12px; 
-}
-
-.mb-3{ 
-  margin-bottom: 16px; 
-}
+.primary-btn[disabled]{ opacity:.6; cursor:not-allowed; }
+.error{ color:#dc2626; font-weight:700; font-size:13.5px; }
+.mt-2{ margin-top:8px; }
+.mb-3{ margin-bottom:12px; }
 </style>
