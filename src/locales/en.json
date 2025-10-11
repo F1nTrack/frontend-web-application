@@ -1,5 +1,97 @@
 {
- "try": {
-   "hello": "hello"
- }
+  "brand": { "title": "KapakID", "tagline": "Digital ID" },
+
+  "layout": {
+    "lang_en": "EN",
+    "lang_es": "ES",
+    "footer_cta": "Don’t have an account?",
+    "footer_link_register": "Create account",
+    "footer_have": "Already have an account?",
+    "footer_link_login": "Sign in",
+    "forgot": "Forgot your password?"
+  },
+
+  "login": {
+    "title": "KapakID",
+    "subtitle": "Access your digital identity",
+
+    "email": "Email/Phone",
+    "password": "Password",
+    "submit": "Sign in",
+
+    "email_label": "Email/Phone",
+    "email_ph": "you@email.com",
+    "password_label": "Password",
+    "sign_in": "Sign in",
+    "signing_in": "Signing in…"
+  },
+
+  "register": {
+    "title": "Create account",
+    "subtitle": "Start your digital identity",
+
+    "name": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "confirm": "Confirm password",
+    "terms": "I accept the Terms & Privacy Policy",
+    "submit": "Create account",
+
+    "full_name": "Full name",
+    "name_ph": "Jane Doe",
+    "email_ph": "you@email.com",
+    "password_ph": "••••••••",
+    "confirm_password": "Confirm password",
+    "confirm_ph": "Repeat your password",
+    "accept_terms": "I accept the Terms & Privacy Policy",
+    "create_account": "Create account",
+    "creating": "Creating…"
+  },
+
+  "errors": {
+    "required": "This field is required.",
+    "email_invalid": "Enter a valid email.",
+    "min_length": "Minimum {n} characters.",
+    "password_mismatch": "Passwords do not match.",
+    "must_accept": "You must accept the Terms & Privacy Policy.",
+    "email_not_found": "Email not found.",
+    "invalid_password": "Incorrect password.",
+    "unexpected": "Unexpected error. Please try again.",
+    "email_exists": "This email is already registered.",
+
+    "email_required": "Email is required.",
+    "password_required": "Password is required.",
+
+    "name_required": "Full name is required.",
+    "name_full": "Enter your full name.",
+    "password_min": "Minimum 6 characters.",
+    "confirm_required": "Confirm your password.",
+    "accept_terms": "You must accept the Terms & Privacy Policy.",
+    "email_taken": "This email is already registered."
+  },
+  "footer": {
+    "copyright": "© 2025 KapakId. All rights reserved."
+  },
+  "nav-bar": {
+    "home": "Home",
+    "profile": "Profile",
+    "documents": "Documents",
+    "payments": "Payments",
+    "transport": "Transport",
+    "history": "History",
+    "notifications": "Notifications",
+    "support": "Technical Support",
+    "out": "Log out"
+  },
+  "welcome": "welcome",
+  "dashboard": {
+    "welcome": "Welcome",
+    "manageIdentity": "Manage Identity",
+    "balance": "Balance",
+    "ActiveDocuments": "Active Documents",
+    "notifica": "Alerts and Notifications",
+    "PendingPayments": "Pending Payments",
+    "profile": "Profile",
+    "TransportationBalances": "TransportationBalances"
+  }
 }

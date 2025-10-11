@@ -1,5 +1,97 @@
 {
-  "try": {
-    "hello": "hi"
+  "brand": { "title": "KapakID", "tagline": "Identidad digital" },
+
+  "layout": {
+    "lang_en": "EN",
+    "lang_es": "ES",
+    "footer_cta": "¿No tienes cuenta?",
+    "footer_link_register": "Registrarse",
+    "footer_have": "¿Ya tienes una cuenta?",
+    "footer_link_login": "Ingresar",
+    "forgot": "¿Olvidaste tu contraseña?"
+  },
+
+  "login": {
+    "title": "KapakID",
+    "subtitle": "Accede a tu identidad digital",
+
+    "email": "Email/Celular",
+    "password": "Contraseña",
+    "submit": "Ingresar",
+
+    "email_label": "Email/Teléfono",
+    "email_ph": "correo@correo.com",
+    "password_label": "Contraseña",
+    "sign_in": "Ingresar",
+    "signing_in": "Ingresando…"
+  },
+
+  "register": {
+    "title": "Crear cuenta",
+    "subtitle": "Inicia tu identidad digital",
+
+    "name": "Nombre completo",
+    "email": "Email",
+    "password": "Contraseña",
+    "confirm": "Confirmar contraseña",
+    "terms": "Acepto los Términos y la Política de Privacidad",
+    "submit": "Crear cuenta",
+
+    "full_name": "Nombre completo",
+    "name_ph": "Juan Pérez",
+    "email_ph": "correo@correo.com",
+    "password_ph": "••••••••",
+    "confirm_password": "Confirmar contraseña",
+    "confirm_ph": "Repite tu contraseña",
+    "accept_terms": "Acepto los Términos y la Política de Privacidad",
+    "create_account": "Crear cuenta",
+    "creating": "Creando…"
+  },
+
+  "errors": {
+    "required": "Este campo es obligatorio.",
+    "email_invalid": "Ingresa un email válido.",
+    "min_length": "Mínimo {n} caracteres.",
+    "password_mismatch": "Las contraseñas no coinciden.",
+    "must_accept": "Debes aceptar los Términos y la Política de Privacidad.",
+    "email_not_found": "Email no encontrado.",
+    "invalid_password": "Contraseña incorrecta.",
+    "unexpected": "Error inesperado. Inténtalo de nuevo.",
+    "email_exists": "Este email ya está registrado.",
+
+    "email_required": "El email es obligatorio.",
+    "password_required": "La contraseña es obligatoria.",
+
+    "name_required": "El nombre es obligatorio.",
+    "name_full": "Ingresa tu nombre completo.",
+    "password_min": "Mínimo 6 caracteres.",
+    "confirm_required": "Confirma tu contraseña.",
+    "accept_terms": "Debes aceptar los Términos y la Política de Privacidad.",
+    "email_taken": "Este email ya está registrado."
+  },
+  "footer": {
+    "copyright": "© 2025 KapakId. Todos los derechos reservados."
+  },
+  "nav-bar": {
+    "home": "Inicio",
+    "profile": "Perfil",
+    "documents": "Documentos",
+    "payments": "Pagos",
+    "transport": "Transporte",
+    "history": "Historial",
+    "notifications": "Historial",
+    "support": "Soporte",
+    "out": "Cerrar Sesión"
+  },
+  "welcome": "bienvenido",
+  "dashboard": {
+    "welcome": "Bienvenido",
+    "manageIdentity": "Administrar identidad",
+    "balance": "Saldo",
+    "ActiveDocuments": "Documentos activos",
+    "notifica": "Alertas y Notificaciones",
+    "PendingPayments": "Pagos Pendientes",
+    "profile": "Perfil",
+    "TransportationBalances": "Saldo de transporte"
   }
 }
