@@ -93,5 +93,30 @@
     "PendingPayments": "Pending Payments",
     "profile": "Profile",
     "TransportationBalances": "TransportationBalances"
+  },
+  "transport-card": {
+    "title": "Transport",
+    "sub": "Manage your transport cards and its balance",
+    "load": "Loading your cards",
+    "total_balance": "Total Balance",
+    "active_cards": "Active Cards",
+    "no_cards": "No transport cards have been found",
+    "low_balance": "Low Balance",
+    "actual_balance": "Actual balance",
+    "recharge": "Recharge"
+
+
+  },
+  "trans": "Resent Transactions",
+  "fast-recharge": {
+    "title": "Fast Recharge",
+    "subtitle": "Select a card and recharge it easily",
+    "load": "Loading cards",
+    "manual": "Manual Balance",
+    "recharge": "Recharge",
+    "no_cards": "No valid cards have been found"
+
   }
+
+
 }

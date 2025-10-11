@@ -5,6 +5,8 @@ const RegisterView = () => import('../domains/auth/presentation/pages/RegisterVi
 
 const HomeView=()=>import('../domains/dashboard-context/HomeView.vue')
 
+const TransportView=()=>import('../domains/transport/presentation/pages/TransportView.vue')
+
 const PruebaView=()=>import('../views/PruebaView.vue')
 
 //const navBar = ()=>import('../shared/presentation/components/nav-bar.vue')
@@ -17,6 +19,7 @@ const router = createRouter({
         { path: '/auth/register', name: 'register', component: RegisterView },
         { path: '/home', name: 'home', component:HomeView },
         {path: '/documents', name: 'documents', component:PruebaView },
+        {path: '/transport', name: 'transport', component: TransportView },
 
 
     ]
