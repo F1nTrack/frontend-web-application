@@ -1,5 +1,7 @@
-<script>
-import { ref } from "vue";
+<script setup >
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { RouterLink } from 'vue-router'
 import {
   Home,
   User,
@@ -11,31 +13,13 @@ import {
   HelpCircle,
   LogOut,
   X,
-  Menu,
-} from "lucide-vue-next";
+  Menu
+} from 'lucide-vue-next'
+import {Button as PvButton} from "primevue";
 
-export default {
-  name: "VerticalNavbar",
-  methods: {X, Menu},
-  components: {
-    Home,
-    User,
-    FileText,
-    CreditCard,
-    Bus,
-    Clock,
-    Bell,
-    HelpCircle,
-    LogOut,
-    X,
-    Menu,
-  },
-  setup() {
-    const isOpen = ref(false);
-    const toggleMenu = () => (isOpen.value = !isOpen.value);
-    return { isOpen, toggleMenu };
-  },
-};
+const { t } = useI18n()
+const isOpen = ref(false)
+const toggleMenu = () => (isOpen.value = !isOpen.value)
 </script>
 
 <template>
@@ -52,22 +36,68 @@ export default {
     <aside :class="['sidebar', { open: isOpen }]">
       <nav>
         <ul>
-          <li><Home /> Inicio</li>
-          <li><User /> Perfil</li>
-          <li><FileText /> Documentos</li>
-          <li><CreditCard /> Pagos</li>
-          <li><Bus /> Transporte</li>
-          <li><Clock /> Historial</li>
-          <li><Bell /> Notificaciones</li>
-          <li><HelpCircle /> Soporte</li>
+          <li>
+            <RouterLink :to="{ name: 'home' }" @click="toggleMenu">
+              <Home />
+              {{ t('nav-bar.home') }}
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/profile" @click="toggleMenu">
+              <User />
+              {{ t('nav-bar.profile') }}
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/documents" @click="toggleMenu">
+              <FileText />
+              {{ t('nav-bar.documents') }}
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/payments" @click="toggleMenu">
+              <CreditCard />
+              {{ t('nav-bar.payments') }}
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/transport" @click="toggleMenu">
+              <Bus />
+              {{ t('nav-bar.transport') }}
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/history" @click="toggleMenu">
+              <Clock />
+              {{ t('nav-bar.history') }}
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/notifications" @click="toggleMenu">
+              <Bell />
+              {{ t('nav-bar.notifications') }}
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/support" @click="toggleMenu">
+              <HelpCircle />
+              {{ t('nav-bar.support') }}
+            </RouterLink>
+          </li>
         </ul>
       </nav>
+      <div class="international">
+        <pv-button class="en-btn" @click="$i18n.locale = 'en'">EN</pv-button>
+        <pv-button class="es-btn" @click="$i18n.locale = 'es'">ES</pv-button>
+      </div>
       <div class="logout">
         <LogOut />
-        <span>Cerrar Sesión</span>
+        <span>{{ t('nav-bar.out') }}</span>
       </div>
     </aside>
   </div>
+
+
 </template>
 
 <style scoped>
@@ -89,23 +119,30 @@ export default {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
+.international {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.en-btn,
+.es-btn {
+  background-color: #576b81;
+  color: white;
+  border: none;
+  border-radius: 100px;
+}
 .menu-toggle:hover {
   background: #f0f0f0;
   transform: scale(1.05);
 }
-
-/* Ícono visible y grande */
 .menu-icon {
   color: #333;
   transition: color 0.3s ease;
 }
-
 .menu-toggle:hover .menu-icon {
   color: #007bff;
 }
-
-/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -121,17 +158,14 @@ export default {
   transition: left 0.3s ease;
   z-index: 1500;
 }
-
 .sidebar.open {
   left: 0;
 }
-
 .sidebar nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .sidebar nav li {
   display: flex;
   align-items: center;
@@ -141,12 +175,18 @@ export default {
   border-radius: 8px;
   transition: background 0.3s;
 }
-
-.sidebar nav li:hover {
-  background: #f5f5f5;
+.sidebar nav li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+  text-decoration: none;
+  width: 100%;
 }
-
-/* Cerrar sesión (efecto restaurado) */
+.sidebar nav li:hover {
+  background: #d5e2ea;
+  box-shadow: 10px 5px 40px rgba(82, 159, 159, 0.28);
+}
 .logout {
   display: flex;
   align-items: center;
@@ -159,13 +199,10 @@ export default {
   border-radius: 8px;
   transition: all 0.3s ease;
 }
-
 .logout:hover {
   background: red;
   color: white;
 }
-
-/* Overlay */
 .overlay {
   position: fixed;
   top: 0;

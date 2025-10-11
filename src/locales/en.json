@@ -71,5 +71,16 @@
   },
   "footer": {
     "copyright": "© 2025 KapakId. All rights reserved."
+  },
+  "nav-bar": {
+    "home": "Home",
+    "profile": "Profile",
+    "documents": "Documents",
+    "payments": "Payments",
+    "transport": "Transport",
+    "history": "History",
+    "notifications": "Notifications",
+    "support": "Technical Support",
+    "out": "Log out"
   }
 }
