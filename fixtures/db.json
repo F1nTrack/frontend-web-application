@@ -27,6 +27,20 @@
       "email": "prueba3@gmail.com",
       "password": "123456",
       "premium": false
+    },
+    {
+      "id": "e70c",
+      "nombre": "",
+      "email": "raultasayco@gmail.com",
+      "password": "Qwerty.123",
+      "premium": false
+    },
+    {
+      "id": "5e4b",
+      "nombre": "",
+      "email": "admin@gmail.com",
+      "password": "admin.123",
+      "premium": false
     }
   ],
   "documentos": [

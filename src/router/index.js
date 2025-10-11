@@ -2,9 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const LoginView    = () => import('../domains/auth/presentation/pages/LoginView.vue')
 const RegisterView = () => import('../domains/auth/presentation/pages/RegisterView.vue')
-const TransportView = () => import('../domains/transport/presentation/pages/TransportView.vue')
 
-const HomeView     = { template: '<div class="p-4"><slot/></div>' }
+const HomeView=()=>import('../domains/dashboard-context/HomeView.vue')
+
+const PruebaView=()=>import('../views/PruebaView.vue')
+
+//const navBar = ()=>import('../shared/presentation/components/nav-bar.vue')
 
 const router = createRouter({
     history: createWebHistory(),
@@ -12,8 +15,9 @@ const router = createRouter({
         { path: '/', redirect: '/auth/login' },
         { path: '/auth/login', name: 'login', component: LoginView },
         { path: '/auth/register', name: 'register', component: RegisterView },
-        { path: '/home', name: 'home', component: HomeView },
-        { path: '/transport', name: 'transport', component: TransportView }
+        { path: '/home', name: 'home', component:HomeView },
+        {path: '/documents', name: 'documents', component:PruebaView },
+
 
     ]
 })

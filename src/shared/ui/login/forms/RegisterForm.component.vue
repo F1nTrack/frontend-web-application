@@ -48,23 +48,45 @@ function validate () {
   return ok
 }
 
-async function onSubmit () {
-  if (!validate()) return
-  loading.value = true
+async function onSubmit() {
+  if (!validate()) return;
+
+  loading.value = true;
   try {
-    const ok = await registerUseCase({
-      nombre: name.value,
+    // Ajustar nombres de propiedades según tu backend
+    const response = await registerUseCase({
+      name: name.value,      // antes: nombre
       email: email.value,
       password: password.value,
-    })
-    if (!ok) { errors.email = t('errors.email_taken'); return }
-    router.push({ name: 'login' })
+    });
+
+    // Dependiendo de tu useCase, puede devolver status, user, o lanzar error
+    if (response?.error) {
+      // Si el backend devuelve error
+      errors.general = response.error;
+      return;
+    }
+
+    // Registro exitoso
+    resetForm();
+    router.push({ name: 'login' });
+
   } catch (e) {
-    errors.general = t('errors.unexpected')
-    console.error(e)
+    // Errores inesperados
+    errors.general = t('errors.unexpected');
+    console.error(e);
   } finally {
-    loading.value = false
+    loading.value = false;
   }
+}
+
+function resetForm() {
+  name.value = '';
+  email.value = '';
+  password.value = '';
+  confirm.value = '';
+  accept.value = false;
+  resetErrors();
 }
 </script>
 
