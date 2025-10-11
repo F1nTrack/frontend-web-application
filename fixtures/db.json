@@ -87,6 +87,34 @@
       "servicio": "Recarga Móvil",
       "monto": 10,
       "fecha": "2025-10-06"
+    },
+    {
+      "id": "2",
+      "usuarioId": 1,
+      "servicio": "Metro",
+      "monto": 2,
+      "fecha": "2025-10-06"
+    },
+    {
+      "id": "3",
+      "usuarioId": 1,
+      "servicio": "Recarga Móvil",
+      "monto": 10,
+      "fecha": "2025-10-06"
+    },
+    {
+      "id": "4",
+      "usuarioId": 1,
+      "servicio": "Lima Bus",
+      "monto": 3,
+      "fecha": "2025-10-06"
+    },
+    {
+      "id": "5",
+      "usuarioId": 1,
+      "servicio": "Metropolitano",
+      "monto": 2,
+      "fecha": "2025-10-06"
     }
   ],
   "notificaciones": [
