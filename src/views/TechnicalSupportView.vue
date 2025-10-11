@@ -6,6 +6,7 @@
       <LanguageToggle />
     </div>
     
+    
     <h1 class="page-header">{{ $t('help.title') }}</h1>
     <p class="page-subtitle">{{ $t('help.subtitle') }}</p>
 
