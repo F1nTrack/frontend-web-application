@@ -1,5 +1,5 @@
 <script>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 import {
   Home,
@@ -35,6 +35,11 @@ export default {
   setup() {
     const router = useRouter();
     const isOpen = ref(false);
+
+    const showMenuButton = computed(() => {
+      const routeName = router.currentRoute.value.name;
+      return routeName !== 'login' && routeName !== 'register';
+    });
     
     const toggleMenu = () => (isOpen.value = !isOpen.value);
     
@@ -49,7 +54,7 @@ export default {
       isOpen.value = false;
     };
     
-    return { isOpen, toggleMenu, navigateTo, logout };
+    return { isOpen, toggleMenu, navigateTo, logout, showMenuButton };
   },
 };
 </script>
@@ -57,7 +62,7 @@ export default {
 <template>
   <div>
     <!-- Botón flotante fijo -->
-    <button class="menu-toggle" @click="toggleMenu" aria-label="Toggle Menu">
+    <button v-if="showMenuButton" class="menu-toggle" @click="toggleMenu" aria-label="Toggle Menu">
       <component :is="isOpen ? X : Menu" size="36" class="menu-icon" />
     </button>
 
