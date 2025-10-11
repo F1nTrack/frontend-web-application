@@ -1,0 +1,38 @@
+export const documents = [
+    {
+        id: 1,
+        type: 'DNI',
+        number: '123456789',
+        issuedAt: '08/09/2019',
+        expiresAt: '12/07/2024',
+        status: 'Activo',
+        statusVariant: 'success',
+    },
+    {
+        id: 2,
+        type: 'Licencia de Conducir',
+        number: 'L12587690',
+        issuedAt: '7/3/2020',
+        expiresAt: '7/3/2024',
+        status: 'Por vencer',
+        statusVariant: 'warning',
+    },
+    {
+        id: 3,
+        type: 'Pasaporte',
+        number: 'NN090957',
+        issuedAt: '9/8/2018',
+        expiresAt: '9/8/2023',
+        status: 'Vencido',
+        statusVariant: 'danger',
+    },
+    {
+        id: 4,
+        type: 'Certificado de Nacimiento',
+        number: 'GP12084',
+        issuedAt: '9/1/2004',
+        expiresAt: '—',
+        status: 'Activo',
+        statusVariant: 'success',
+    },
+]

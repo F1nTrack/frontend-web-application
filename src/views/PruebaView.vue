@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 
 import NavBar from "../shared/presentation/components/nav-bar.vue";
 </script>
@@ -14,4 +14,4 @@ h1{
   align-items: center;
   justify-content: center;
 }
-</style>
+</style>-->
