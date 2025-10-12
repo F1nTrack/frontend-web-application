@@ -1,4 +1,19 @@
 {
+  "documents": {
+    "title": "Documentos"
+  },
+  "payments": {
+    "title": "Pagos"
+  },
+  "transport": {
+    "title": "Transporte"
+  },
+  "history": {
+    "title": "Historial"
+  },
+  "notifications": {
+    "title": "Notificaciones"
+  },
   "brand": {
     "title": "KapakID",
     "tagline": "Identidad digital"
@@ -58,6 +73,21 @@
     "notifications": "Notificaciones",
     "support": "Soporte",
     "out": "Cerrar Sesión"
+  },
+  "documents": {
+    "title": "Documentos"
+  },
+  "payments": {
+    "title": "Pagos"
+  },
+  "transport": {
+    "title": "Transporte"
+  },
+  "history": {
+    "title": "Historial"
+  },
+  "notifications": {
+    "title": "Notificaciones"
   },
   "welcome": "bienvenido",
   "dashboard": {
