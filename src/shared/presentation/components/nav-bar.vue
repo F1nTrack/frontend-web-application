@@ -74,7 +74,7 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/support" @click="toggleMenu">
+            <RouterLink to="/technicalSupport" @click="toggleMenu">
               <HelpCircle />
               {{ t('nav-bar.support') }}
             </RouterLink>

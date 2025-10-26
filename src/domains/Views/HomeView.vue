@@ -1,3 +1,13 @@
+<script setup>
+import BalanceCard from '../dashboard-context/components/BalanceCard.vue'
+import DocumentsCard from '../dashboard-context/components/DocumentsCard.vue'
+import NotificationsCard from '../dashboard-context/components/Notifications.vue'
+import PendingPaymentsCard from '../dashboard-context/components/PendingPaymentsCard.vue'
+import ProfileCard from '../dashboard-context/components/ProfileCard.vue'
+import TransportCards from '../dashboard-context/components/TransportCards.vue'
+import NavBar from "../../shared/presentation/components/nav-bar.vue";
+</script>
+
 <template>
   <nav-bar></nav-bar>
   <div class="dashboard-container">
@@ -12,6 +22,7 @@
       <PendingPaymentsCard />
     </div>
 
+
     <!-- Fila 3: dos tarjetas modernas -->
     <div class="row">
       <NotificationsCard />
@@ -23,15 +34,7 @@
   </div>
 </template>
 
-<script setup>
-import BalanceCard from '../dashboard-context/components/BalanceCard.vue'
-import DocumentsCard from '../dashboard-context/components/DocumentsCard.vue'
-import NotificationsCard from '../dashboard-context/components/Notifications.vue'
-import PendingPaymentsCard from '../dashboard-context/components/PendingPaymentsCard.vue'
-import ProfileCard from '../dashboard-context/components/ProfileCard.vue'
-import TransportCards from '../dashboard-context/components/TransportCards.vue'
-import NavBar from "../../shared/presentation/components/nav-bar.vue";
-</script>
+
 
 <style scoped>
 .dashboard-container {

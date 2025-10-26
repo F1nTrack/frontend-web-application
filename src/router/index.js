@@ -1,19 +1,19 @@
-
 import { createRouter, createWebHistory } from 'vue-router'
 
-const LoginView = () => import('../domains/auth/presentation/pages/LoginView.vue')
+const LoginView    = () => import('../domains/auth/presentation/pages/LoginView.vue')
 const RegisterView = () => import('../domains/auth/presentation/pages/RegisterView.vue')
 
-
-const HomeView=()=>import('../domains/dashboard-context/HomeView.vue')
+const HomeView=()=>import('../domains/Views/HomeView.vue')
+const PaymentsView=()=>import('../domains/Views/PaymentsView.vue')
+const DocumentsView=()=>import('../domains/Views/DocumentsView.vue')
+const TransportView=()=>import('../domains/Views/TransportView.vue')
+const HistoryView=()=>import('../domains/Views/HistoryView.vue')
+const NotificationsView=()=>import('../domains/Views/NotificationsView.vue')
+const TechnicalSupportView=()=>import('../domains/Views/TechnicalSupportView.vue')
 
 const PruebaView=()=>import('../views/PruebaView.vue')
 
 //const navBar = ()=>import('../shared/presentation/components/nav-bar.vue')
-const HomeView = () => import('../domains/dashboard-context/HomeView.vue')
-const PruebaView = () => import('../views/PruebaView.vue')
-const TechnicalSupportView = () => import('../views/TechnicalSupportView.vue')
-
 
 const router = createRouter({
     history: createWebHistory(),
@@ -22,10 +22,15 @@ const router = createRouter({
         { path: '/auth/login', name: 'login', component: LoginView },
         { path: '/auth/register', name: 'register', component: RegisterView },
         { path: '/home', name: 'home', component:HomeView },
+        { path: '/documents', name: 'documents', component:DocumentsView },
+        { path: '/payments', name: 'payments', component: PaymentsView },
+        { path: '/transport', name: 'transport', component: TransportView },
+        { path: '/history', name: 'history', component: HistoryView },
+        { path: '/notifications', name: 'notifications', component: NotificationsView },
+        { path: '/technicalSupport', name: 'technicalSupport', component: TechnicalSupportView },
 
 
-        { path: '/support', name: 'support', component: TechnicalSupportView },
-        { path: '/prueba', name: 'prueba', component: PruebaView }
+
     ]
 })
 

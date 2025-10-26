@@ -29,10 +29,10 @@
       "premium": false
     },
     {
-      "id": "mgm4dtfh-x3v6za",
-      "nombre": "TestUser",
-      "email": "testuser@example.com",
-      "password": "pw",
+      "id": "bda5",
+      "nombre": "Raul Hiroshi",
+      "email": "raultasayco@gmail.com",
+      "password": "admin123",
       "premium": false
     }
   ],
@@ -94,6 +94,60 @@
       "id": "1",
       "usuarioId": 1,
       "mensaje": "Tu licencia vence pronto",
+      "leido": false
+    },
+    {
+      "id": "2",
+      "usuarioId": 1,
+      "mensaje": "Nuevo mensaje de soporte disponible",
+      "leido": false
+    },
+    {
+      "id": "3",
+      "usuarioId": 1,
+      "mensaje": "Recordatorio: Tarea pendiente en el proyecto ABC",
+      "leido": false
+    },
+    {
+      "id": "4",
+      "usuarioId": 1,
+      "mensaje": "Actualización de seguridad: Verifica tu contraseña",
+      "leido": true
+    },
+    {
+      "id": "5",
+      "usuarioId": 1,
+      "mensaje": "Bienvenido a la nueva versión de la app",
+      "leido": false
+    },
+    {
+      "id": "6",
+      "usuarioId": 1,
+      "mensaje": "Factura pendiente de pago: Revisar en tu cuenta",
+      "leido": false
+    },
+    {
+      "id": "7",
+      "usuarioId": 1,
+      "mensaje": "Nuevo like en tu publicación del foro",
+      "leido": true
+    },
+    {
+      "id": "8",
+      "usuarioId": 1,
+      "mensaje": "Invitación a colaborar en proyecto XYZ",
+      "leido": false
+    },
+    {
+      "id": "9",
+      "usuarioId": 1,
+      "mensaje": "Reseña de tu producto ha sido aprobada",
+      "leido": false
+    },
+    {
+      "id": "10",
+      "usuarioId": 1,
+      "mensaje": "Oferta especial: 20% descuento en renovación",
       "leido": false
     }
   ],
