@@ -34,6 +34,13 @@
       "email": "raultasayco@gmail.com",
       "password": "admin123",
       "premium": false
+    },
+    {
+      "id": "10a3",
+      "nombre": "Raul",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "premium": false
     }
   ],
   "documentos": [
