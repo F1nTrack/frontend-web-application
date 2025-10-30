@@ -123,6 +123,66 @@
     "support": "Soporte",
     "out": "Cerrar Sesión"
   },
+  "common": {
+    "loading": "Cargando…"
+  },
+  "documentsCard": {
+    "title": "Mis documentos",
+    "error": "No pudimos cargar tus documentos.",
+    "total": "Tienes {count} documentos",
+    "active": "Activos: {count}",
+    "expired": "Vencidos: {count}"
+  },
+  "documentsView": {
+    "title": "Gestión de documentos",
+    "subtitle": "Revisa, filtra y agrega tus documentos oficiales.",
+    "add": "Agregar documento",
+    "formTitle": "Nuevo documento",
+    "type": "Tipo de documento",
+    "number": "Número de documento",
+    "issueDate": "Fecha de emisión",
+    "expirationDate": "Fecha de vencimiento",
+    "status": "Estado",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "searchPlaceholder": "Buscar documentos…",
+    "clearFilters": "Limpiar filtros",
+    "tableTitle": "Mis documentos ({count})",
+    "tableSubtitle": "Lista completa de tus documentos oficiales",
+    "error": "No pudimos cargar tus documentos.",
+    "headers": {
+      "type": "Tipo de documento",
+      "number": "Número",
+      "issueDate": "Fecha de emisión",
+      "expirationDate": "Fecha de vencimiento",
+      "status": "Estado",
+      "actions": "Acciones"
+    },
+    "empty": "No se encontraron documentos con los filtros seleccionados.",
+    "actions": {
+      "view": "Ver",
+      "download": "Descargar",
+      "renew": "Renovar",
+      "share": "Compartir"
+    },
+    "status": {
+      "active": "Activo",
+      "expiring": "Por vencer",
+      "expired": "Vencido",
+      "pending": "Pendiente"
+    },
+    "statusCards": {
+      "active": "Activos",
+      "expiring": "Por vencer",
+      "expired": "Vencidos",
+      "pending": "Pendientes"
+    }
+  },
+  "transportCards": {
+    "title": "Tarjetas de transporte",
+    "error": "No pudimos cargar tus tarjetas de transporte.",
+    "empty": "No se encontraron tarjetas de transporte."
+  },
   "welcome": "bienvenido",
   "dashboard": {
     "welcome": "Bienvenido",
