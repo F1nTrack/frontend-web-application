@@ -2,6 +2,7 @@
 import { useI18n } from 'vue-i18n'
 import HeaderLogin from '../../../../shared/ui/login/components/HeaderLogin.component.vue'
 import LoginForm    from '../../../../shared/ui/login/forms/LoginForm.component.vue'
+import FooterContent from "../../../../shared/presentation/components/footer-content.vue";
 const { t } = useI18n()
 </script>
 
@@ -29,19 +30,18 @@ const { t } = useI18n()
         </p>
       </section>
     </main>
+    <footer-content></footer-content>
   </div>
 </template>
 
 <style scoped>
 .auth-layout{
-  min-height:100vh; 
-  display:flex; 
+  min-height:100vh;
+  display:flex;
   flex-direction:column;
   background: linear-gradient(135deg, #0A3557 0%, #2D9CDB 100%);
   position: relative;
-  overflow: hidden;
 }
-
 .auth-layout::before {
   content: '';
   position: absolute;
@@ -83,7 +83,7 @@ const { t } = useI18n()
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
   animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 

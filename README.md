@@ -8,3 +8,13 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
 # frontend-web-application
 The frontend is in this repository
 >>>>>>> 6a1c3333df878f16e15dcec35c40f99cae46be24
+
+
+npm install chart.js html2canvas jspdf
+npm install recharts-vue
+npm install chart.js vue-chartjs
+npm install recharts-vue lucide-vue-next html2canvas
+
+npm install primevue primeicons @primeuix/themes material recharts-vue lucide-vue-next
+npm install html2canvas jspdf
+npm install chart.js vue-chartjs

@@ -7,7 +7,6 @@ const apiClient = axios.create({
     }
 });
 
-
 export default {
     // --- Usuarios ---
     getUsuario(id) {
@@ -33,14 +32,9 @@ export default {
         return apiClient.get(`/notificaciones?usuarioId=${usuarioId}`);
     },
 
-    // --- Profile (Ejemplo de endpoint simple) ---
+    // --- Perfil ---
     getProfile() {
-        return apiClient.get('/profile');
+        // Simula un perfil de usuario, puedes adaptarlo según tu JSON
+        return apiClient.get('/usuarios/1');
     }
-
-    // ...puedes agregar aquí las funciones para POST, PUT, DELETE (CRUD)
-    // Ejemplo de un POST para crear un documento:
-    // createDocumento(data) {
-    //   return apiClient.post('/documentos', data);
-    // }
 };

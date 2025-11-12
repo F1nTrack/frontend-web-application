@@ -2,6 +2,7 @@
 import { useI18n } from 'vue-i18n'
 import HeaderRegister from '../../../../shared/ui/login/components/HeaderRegister.component.vue'
 import RegisterForm   from '../../../../shared/ui/login/forms/RegisterForm.component.vue'
+import FooterContent from "../../../../shared/presentation/components/footer-content.vue";
 const { t } = useI18n()
 </script>
 
@@ -24,6 +25,7 @@ const { t } = useI18n()
         </p>
       </section>
     </main>
+    <footer-content></footer-content>
   </div>
 </template>
 
@@ -35,7 +37,6 @@ const { t } = useI18n()
   flex-direction:column;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   position: relative;
-  overflow: hidden;
 }
 
 .auth-layout::before {
@@ -134,11 +135,11 @@ const { t } = useI18n()
   50% { transform: scale(1.05); }
 }
 
-.title{ 
-  text-align: center; 
-  margin: 8px 0 12px; 
-  font-weight: 800; 
-  color: #1a1a2e; 
+.title{
+  text-align: center;
+  margin: 8px 0 12px;
+  font-weight: 800;
+  color: #1a1a2e;
   font-size: 48px;
   background: linear-gradient(135deg, #1a1a2e, #16213e);
   -webkit-background-clip: text;
