@@ -6,10 +6,11 @@ const RegisterView = () => import('../domains/auth/presentation/pages/RegisterVi
 const HomeView=()=>import('../domains/Views/HomeView.vue')
 const PaymentsView=()=>import('../domains/Views/PaymentsView.vue')
 const DocumentsView=()=>import('../domains/Views/DocumentsView.vue')
-const TransportView=()=>import('../domains/Views/TransportView.vue')
+//const TransportView=()=>import('../domains/Views/TransportView.vue')
 const HistoryView=()=>import('../domains/Views/HistoryView.vue')
 const NotificationsView=()=>import('../domains/Views/NotificationsView.vue')
 const TechnicalSupportView=()=>import('../domains/Views/TechnicalSupportView.vue')
+const TransportView=()=>import('../domains/transport/presentation/pages/TransportView.vue')
 
 const PruebaView=()=>import('../views/PruebaView.vue')
 

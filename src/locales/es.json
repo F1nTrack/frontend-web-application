@@ -119,7 +119,7 @@
     "payments": "Pagos",
     "transport": "Transporte",
     "history": "Historial",
-    "notifications": "Historial",
+    "notifications": "Notificaciones",
     "support": "Soporte",
     "out": "Cerrar Sesión"
   },
@@ -133,5 +133,72 @@
     "PendingPayments": "Pagos Pendientes",
     "profile": "Perfil",
     "TransportationBalances": "Saldo de transporte"
+  },
+  "transport-card": {
+    "title": "Transporte",
+    "sub": "Maneja tus tarjetas de transporte y su saldo",
+    "load": "Cargando tus tarjetas",
+    "total_balance": "Saldo Total",
+    "active_cards": "Tarjetas Activas",
+    "no_cards": "No se encontraron tarjetas de transporte",
+    "low_balance": "Saldo Bajo",
+    "actual_balance": "Saldo actual",
+    "recharge": "Recarga"
+
+  },
+  "trans": "Transacciones Recientes",
+  "fast-recharge": {
+    "title": "Recarga Rapida",
+    "subtitle": "Selecciona una tarjeta y recarga saldo fácilmente",
+    "load": "Cargando tarjetas",
+    "manual": "Monto manual",
+    "recharge": "Recargar",
+    "no_cards": "No se encontraron tarjetas validas"
+
+  },
+  "documentsView": {
+    "title": "Gestión de documentos",
+    "subtitle": "Revisa, filtra y agrega tus documentos oficiales.",
+    "add": "Agregar documento",
+    "formTitle": "Nuevo documento",
+    "type": "Tipo de documento",
+    "number": "Número de documento",
+    "issueDate": "Fecha de emisión",
+    "expirationDate": "Fecha de vencimiento",
+    "status": "Estado",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "searchPlaceholder": "Buscar documentos…",
+    "clearFilters": "Limpiar filtros",
+    "tableTitle": "Mis documentos ({count})",
+    "tableSubtitle": "Lista completa de tus documentos oficiales",
+    "error": "No pudimos cargar tus documentos.",
+    "headers": {
+      "type": "Tipo de documento",
+      "number": "Número",
+      "issueDate": "Fecha de emisión",
+      "expirationDate": "Fecha de vencimiento",
+      "status": "Estado",
+      "actions": "Acciones"
+    },
+    "empty": "No se encontraron documentos con los filtros seleccionados.",
+    "actions": {
+      "view": "Ver",
+      "download": "Descargar",
+      "renew": "Renovar",
+      "share": "Compartir"
+    },
+    "status": {
+      "active": "Activo",
+      "expiring": "Por vencer",
+      "expired": "Vencido",
+      "pending": "Pendiente"
+    },
+    "statusCards": {
+      "active": "Activos",
+      "expiring": "Por vencer",
+      "expired": "Vencidos",
+      "pending": "Pendientes"
+    }
   }
 }

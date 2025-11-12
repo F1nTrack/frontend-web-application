@@ -6,7 +6,11 @@ import NavBar from "../../../../shared/presentation/components/nav-bar.vue";
 </script>
 
 <template>
-  <nav-bar></nav-bar>/
+  <nav-bar></nav-bar>
+  <div>
+    <br>
+    <br>
+  </div>
   <section class="transport-section">
     <div class="transport-card">
       <transport-card/>
@@ -20,11 +24,14 @@ import NavBar from "../../../../shared/presentation/components/nav-bar.vue";
 </template>
 
 <style scoped>
+
 .transport-section {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
+
+
 }
 
 /* Contenedor horizontal */
