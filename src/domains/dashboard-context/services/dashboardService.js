@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { DashboardData } from '../model/datos.entity.js';
 
-const API_URL = 'http://localhost:4000/dashboard';
+const API_URL = 'https://kapak-fake-api.onrender.com/dashboard';
 
 export default {
     async getDashboardData() {

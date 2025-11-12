@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "api:auth": "json-server --watch fixtures/db.json --port 4000"
+    "start:api": "json-server --watch fixtures/db.json --host 0.0.0.0 --port $PORT"
   },
   "dependencies": {
     "@primeuix/themes": "^1.2.5",
