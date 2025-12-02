@@ -1,53 +1,47 @@
 {
-  "brand": {
-    "title": "KapakID",
-    "tagline": "Identidad digital"
-  },
+  "brand": { "title": "KapakID", "tagline": "Identidad digital" },
   "layout": {
     "lang_en": "EN",
     "lang_es": "ES",
-    "footer_cta": "¿No tienes una cuenta?",
+    "footer_cta": "No tienes una cuenta",
     "footer_link_register": "Crear cuenta",
-    "footer_have": "¿Ya tienes una cuenta?",
-    "footer_have_account": "¿Ya tienes una cuenta?",
-    "footer_link_login": "Iniciar sesión",
-    "forgot": "¿Olvidaste tu contraseña?"
+    "footer_have": "Ya tienes una cuenta",
+    "footer_link_login": "Iniciar sesion",
+    "forgot": "Olvidaste tu contraseña"
   },
   "support": {
-    "title": "Centro de Soporte Técnico",
-    "welcome": "Bienvenido. Aquí puedes encontrar ayuda o contactarnos.",
+    "title": "Centro de Soporte Tecnico",
+    "welcome": "Bienvenido Aqui puedes encontrar ayuda o contactarnos",
     "faq_title": "Preguntas Frecuentes",
-    "contact_cta": "¿Aún necesitas ayuda? Contáctanos"
+    "contact_cta": "Aun necesitas ayuda Contactanos"
   },
   "help": {
     "title": "Centro de Ayuda y Soporte",
-    "subtitle": "Encuentra respuestas a tus preguntas y contáctanos si necesitas más ayuda.",
+    "subtitle": "Encuentra respuestas a tus preguntas y contactanos si necesitas mas ayuda",
     "center_title": "Centro de Ayuda",
-    "search_placeholder": "Busca en nuestra base de conocimientos...",
+    "search_placeholder": "Busca en nuestra base de conocimientos",
     "popular_topics": "Temas Populares",
-    "topic_login": "Inicio de Sesión",
-    "topic_dce": "Documentos (DCE)",
+    "topic_login": "Inicio de Sesion",
+    "topic_dce": "Documentos DCE",
     "topic_recharge": "Recargas y Pagos",
     "topic_data": "Mis Datos",
     "contact_title": "Contacto Directo",
-    "contact_subtitle": "¿No encuentras lo que buscas? Nuestro equipo está aquí para ayudarte.",
+    "contact_subtitle": "No encuentras lo que buscas Nuestro equipo esta aqui para ayudarte",
     "chat_title": "Chatea con un Agente",
-    "chat_hours": "Disponible de Lunes a Viernes, 9am - 6pm",
+    "chat_hours": "Disponible de Lunes a Viernes 9am a 6pm",
     "chat_button": "Iniciar Chat",
     "ticket_title": "Crea un Ticket de Soporte",
-    "ticket_response": "Tiempo de respuesta estimado: 24 horas",
+    "ticket_response": "Tiempo de respuesta estimado 24 horas",
     "ticket_button": "Crear Ticket",
-    "docs_title": "Guías y Documentación",
-    "docs_subtitle": "Consulta nuestros documentos oficiales para información detallada.",
-    "doc_guide": "Guía de Inicio Rápido",
-    "doc_terms": "Términos y Condiciones",
-    "doc_privacy": "Política de Privacidad",
+    "docs_title": "Guias y Documentacion",
+    "docs_subtitle": "Consulta nuestros documentos oficiales para informacion detallada",
+    "doc_guide": "Guia de Inicio Rapido",
+    "doc_terms": "Terminos y Condiciones",
+    "doc_privacy": "Politica de Privacidad",
     "doc_faq": "Preguntas Frecuentes Detalladas",
-    "doc_security": "Prácticas de Seguridad"
+    "doc_security": "Practicas de Seguridad"
   },
-  "footer": {
-    "copyright": "© 2025 KapakId. Todos los derechos reservados."
-  },
+  "footer": { "copyright": "KapakId Todos los derechos reservados" },
   "nav-bar": {
     "home": "Inicio",
     "profile": "Perfil",
@@ -57,7 +51,7 @@
     "history": "Historial",
     "notifications": "Notificaciones",
     "support": "Soporte",
-    "out": "Cerrar Sesión"
+    "out": "Cerrar Sesion"
   },
   "welcome": "bienvenido",
   "dashboard": {
@@ -73,11 +67,11 @@
   "login": {
     "title": "KapakID",
     "subtitle": "Accede a tu identidad digital",
-    "email_label": "Email/Teléfono",
-    "email_ph": "tu@email.com",
-    "password_label": "Contraseña",
-    "sign_in": "Iniciar sesión",
-    "signing_in": "Iniciando sesión..."
+    "email_label": "Email Telefono",
+    "email_ph": "tu email com",
+    "password_label": "Contrasena",
+    "sign_in": "Iniciar sesion",
+    "signing_in": "Iniciando sesion"
   },
   "register": {
     "title": "Crear cuenta",
@@ -85,120 +79,28 @@
     "full_name": "Nombre completo",
     "name_ph": "Jane Doe",
     "email": "Email",
-    "email_ph": "tu@email.com",
-    "password": "Contraseña",
-    "password_ph": "••••••••",
+    "email_ph": "tu email com",
+    "password": "Contrasena",
+    "password_ph": "password",
     "confirm_password": "Confirmar contraseña",
     "confirm_ph": "Repite tu contraseña",
-    "accept_terms": "Acepto los Términos y Política de Privacidad",
+    "accept_terms": "Acepto los Terminos y Politica de Privacidad",
     "create_account": "Crear cuenta",
-    "creating": "Creando..."
+    "creating": "Creando"
   },
   "errors": {
-    "required": "Este campo es obligatorio.",
-    "email_invalid": "Ingresa un email válido.",
-    "email_required": "El email es obligatorio.",
-    "password_required": "La contraseña es obligatoria.",
-    "email_not_found": "Email no encontrado.",
-    "invalid_password": "Contraseña incorrecta.",
-    "unexpected": "Error inesperado. Por favor, inténtalo de nuevo.",
-    "name_required": "El nombre completo es obligatorio.",
-    "password_min": "Mínimo 6 caracteres.",
-    "confirm_required": "Confirma tu contraseña.",
-    "password_mismatch": "Las contraseñas no coinciden.",
-    "accept_terms": "Debes aceptar los Términos y Política de Privacidad.",
-    "email_taken": "Este email ya está registrado."
-  },
-  "footer": {
-    "copyright": "© 2025 KapakId. Todos los derechos reservados."
-  },
-  "nav-bar": {
-    "home": "Inicio",
-    "profile": "Perfil",
-    "documents": "Documentos",
-    "payments": "Pagos",
-    "transport": "Transporte",
-    "history": "Historial",
-    "notifications": "Notificaciones",
-    "support": "Soporte",
-    "out": "Cerrar Sesión"
-  },
-  "welcome": "bienvenido",
-  "dashboard": {
-    "welcome": "Bienvenido",
-    "manageIdentity": "Administrar identidad",
-    "balance": "Saldo",
-    "ActiveDocuments": "Documentos activos",
-    "notifica": "Alertas y Notificaciones",
-    "PendingPayments": "Pagos Pendientes",
-    "profile": "Perfil",
-    "TransportationBalances": "Saldo de transporte"
-  },
-  "transport-card": {
-    "title": "Transporte",
-    "sub": "Maneja tus tarjetas de transporte y su saldo",
-    "load": "Cargando tus tarjetas",
-    "total_balance": "Saldo Total",
-    "active_cards": "Tarjetas Activas",
-    "no_cards": "No se encontraron tarjetas de transporte",
-    "low_balance": "Saldo Bajo",
-    "actual_balance": "Saldo actual",
-    "recharge": "Recarga"
-
-  },
-  "trans": "Transacciones Recientes",
-  "fast-recharge": {
-    "title": "Recarga Rapida",
-    "subtitle": "Selecciona una tarjeta y recarga saldo fácilmente",
-    "load": "Cargando tarjetas",
-    "manual": "Monto manual",
-    "recharge": "Recargar",
-    "no_cards": "No se encontraron tarjetas validas"
-
-  },
-  "documentsView": {
-    "title": "Gestión de documentos",
-    "subtitle": "Revisa, filtra y agrega tus documentos oficiales.",
-    "add": "Agregar documento",
-    "formTitle": "Nuevo documento",
-    "type": "Tipo de documento",
-    "number": "Número de documento",
-    "issueDate": "Fecha de emisión",
-    "expirationDate": "Fecha de vencimiento",
-    "status": "Estado",
-    "save": "Guardar",
-    "cancel": "Cancelar",
-    "searchPlaceholder": "Buscar documentos…",
-    "clearFilters": "Limpiar filtros",
-    "tableTitle": "Mis documentos ({count})",
-    "tableSubtitle": "Lista completa de tus documentos oficiales",
-    "error": "No pudimos cargar tus documentos.",
-    "headers": {
-      "type": "Tipo de documento",
-      "number": "Número",
-      "issueDate": "Fecha de emisión",
-      "expirationDate": "Fecha de vencimiento",
-      "status": "Estado",
-      "actions": "Acciones"
-    },
-    "empty": "No se encontraron documentos con los filtros seleccionados.",
-    "actions": {
-      "view": "Ver",
-      "download": "Descargar",
-      "renew": "Renovar",
-      "share": "Compartir"
-    },
-    "status": {
-      "active": "Activo",
-      "expiring": "Por vencer",
-      "expired": "Vencido",
-      "pending": "Pendiente"
-    },
-    "statusCards": {
-      "active": "Activos",
-      "expiring": "Por vencer",
-      "expired": "Vencidos",
-      "pending": "Pendientes"
-    }
+    "required": "Este campo es obligatorio",
+    "email_invalid": "Ingresa un email valido",
+    "email_required": "El email es obligatorio",
+    "password_required": "La contrasena es obligatoria",
+    "email_not_found": "Email no encontrado",
+    "invalid_password": "Contrasena incorrecta",
+    "unexpected": "Error inesperado Por favor intentalo de nuevo",
+    "name_required": "El nombre completo es obligatorio",
+    "password_min": "Minimo 6 caracteres",
+    "confirm_required": "Confirma tu contraseña",
+    "password_mismatch": "Las contraseñas no coinciden",
+    "accept_terms": "Debes aceptar los Terminos y Politica de Privacidad",
+    "email_taken": "Este email ya esta registrado"
   }
 }

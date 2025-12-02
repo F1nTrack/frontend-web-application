@@ -12,18 +12,15 @@ export default defineConfig({
     server: {
         proxy: {
             '/api': {
-                // 👇 AQUÍ ESTÁ EL CAMBIO
-                // Apunta a tu nueva API pública en Render
                 target: 'https://kapak-fake-api.onrender.com',
-
-                changeOrigin: true, // ¡Muy importante para que funcione!
-
-                // Esto elimina el '/api' antes de enviar la petición a Render
-                // (Ej: /api/usuarios -> /usuarios)
+                changeOrigin: true,
                 rewrite: p => p.replace(/^\/api/, ''),
             },
         },
     },
+    build: {
+        sourcemap: true, // <--- activa los source maps para producción
+    }
 })
 
 

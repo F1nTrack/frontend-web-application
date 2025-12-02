@@ -86,8 +86,10 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
         <pv-button class="es-btn" @click="$i18n.locale = 'es'">ES</pv-button>
       </div>
       <div class="logout">
+        <RouterLink to="auth/login" @click="toggleMenu">
         <LogOut />
         <span>{{ t('nav-bar.out') }}</span>
+        </RouterLink>
       </div>
     </aside>
   </div>
@@ -197,6 +199,11 @@ const toggleMenu = () => (isOpen.value = !isOpen.value)
 .logout:hover {
   background: red;
   color: white;
+}
+.logout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .overlay {
   position: fixed;

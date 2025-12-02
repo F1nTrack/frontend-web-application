@@ -1,16 +1,16 @@
 import axios from 'axios';
 
-// 🔹 Configuración base
-const API_BASE_URL = 'https://kapak-fake-api.onrender.com';
+const baseURL = 'https://kapak-fake-api.onrender.com';
+console.log('API Base URL:', baseURL);
 
 const apiClient = axios.create({
-    baseURL: API_BASE_URL,
+    baseURL,
     headers: {
         'Content-Type': 'application/json',
+        Accept: 'application/json',
     },
 });
 
-// 🔹 Interceptor para agregar token si existe
 apiClient.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem('user-token');
@@ -22,11 +22,20 @@ apiClient.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
-// 🔹 Manejo de errores global (opcional)
 apiClient.interceptors.response.use(
-    (response) => response,
+    (response) => {
+        if (typeof response.data === 'string') {
+            try {
+                response.data = JSON.parse(response.data);
+            } catch (err) {
+                console.error('Error parsing JSON:', err, response.data);
+                return Promise.reject(new Error('Invalid JSON response from server'));
+            }
+        }
+        return response;
+    },
     (error) => {
-        console.error('Error en la petición:', error.response || error.message);
+        console.error('API Error:', error.response || error.message);
         return Promise.reject(error);
     }
 );

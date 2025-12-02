@@ -1,5 +1,5 @@
 ﻿
-const BASE = '/api';
+const BASE = 'https://kapak-fake-api.onrender.com';
 
 export const http = {
     async get(url) {

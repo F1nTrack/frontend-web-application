@@ -1,40 +1,44 @@
-import axios from 'axios';
+// Archivo: api.service.js (o como se llame)
 
+// ⛔️ ELIMINADO: import axios from 'axios';
+// 👇✨ AÑADIDO: Importamos nuestro cliente central
+// (Ajusta la ruta './api.client.js' si están en carpetas diferentes)
+import apiClient from './api.client.js';
+
+// ⛔️ ELIMINADO: Toda la creación de 'apiClient'
+/*
 const apiClient = axios.create({
     baseURL: 'https://kapak-fake-api.onrender.com',
     headers: {
         'Content-Type': 'application/json'
     }
 });
+*/
 
+// El resto de tu código queda EXACTAMENTE IGUAL
 export default {
     // --- Usuarios ---
     getUsuario(id) {
-        // GET /usuarios/1
         return apiClient.get(`/usuarios/${id}`);
     },
 
     // --- Documentos ---
     getDocumentosPorUsuario(usuarioId) {
-        // GET /documentos?usuarioId=1
         return apiClient.get(`/documentos?usuarioId=${usuarioId}`);
     },
 
     // --- Pagos ---
     getPagosPorUsuario(usuarioId) {
-        // GET /pagos?usuarioId=1
         return apiClient.get(`/pagos?usuarioId=${usuarioId}`);
     },
 
     // --- Notificaciones ---
     getNotificacionesPorUsuario(usuarioId) {
-        // GET /notificaciones?usuarioId=1
         return apiClient.get(`/notificaciones?usuarioId=${usuarioId}`);
     },
 
     // --- Perfil ---
     getProfile() {
-        // Simula un perfil de usuario, puedes adaptarlo según tu JSON
         return apiClient.get('/usuarios/1');
     }
 };

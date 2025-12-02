@@ -1,4 +1,4 @@
-﻿import { http } from '../../../../shared/services/httpClient.js';
+﻿import { http } from '@/shared/services/httpClient.js';
 
 export async function loginUseCase({ email, password }) {
     // normalizar entradas
