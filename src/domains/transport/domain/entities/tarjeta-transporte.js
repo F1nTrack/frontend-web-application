@@ -1,10 +1,17 @@
-import {Documentos} from "./documentos.js";
+import { Documentos } from "./documentos.js";
+
 export class TarjetaTransporte extends Documentos {
-    /**
-     * @param {{id:number, usuarioId:number, tipo:string, numero:string, estado:string, saldo:number}}
-     */
-    constructor({ id, usuarioId, tipo, numero, estado, saldo }) {
-        super({ id, usuarioId, tipo, numero, estado });
+
+    constructor(documentDto, saldo) {
+        super(documentDto);
+
+        this.numero = documentDto.documentNumber;
+        this.estado = documentDto.status;
         this.saldo = saldo;
+
+        const tiposTransporte = ['Metropolitano Card', 'Metro de Lima', 'Tarjeta Lima'];
+
+        // Asignar nombre según el type
+        this.tipo = tiposTransporte[documentDto.type - 1] ?? 'Tarjeta de Transporte';
     }
 }

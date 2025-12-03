@@ -26,26 +26,25 @@ const totalTarjetas = computed(() => tarjetas.value.length);
 onMounted(async () => {
   try {
     const documentos = await apiFindDocumentByUserID(userId);
-    if (Array.isArray(documentos) && documentos.length) {
-      const docsFiltrados = documentos.filter(doc => tiposTransporte.includes(doc.tipo));
 
-      const tarjetasConSaldo = await Promise.all(
-          docsFiltrados.map(async (doc) => {
-            try {
-              const balanceData = await apiFindTransportCardBalance(doc.id);
-              const saldo = Number(balanceData.balance) || 0;
-              return new TarjetaTransporte({ ...doc, saldo });
-            } catch (err) {
-              console.error(`Error al obtener saldo para documento ${doc.id}:`, err);
-              return new TarjetaTransporte({ ...doc, saldo: 0 });
-            }
-          })
-      );
+    const docsFiltrados = documentos.filter(doc => doc.type === 4);
 
-      tarjetas.value = tarjetasConSaldo;
-    } else {
-      tarjetas.value = [];
-    }
+    const tarjetasConSaldo = await Promise.all(
+        docsFiltrados.map(async (doc) => {
+          try {
+            const balanceData = await apiFindTransportCardBalance(doc.id);
+            const saldo = Number(balanceData.balance) || 0;
+
+            return new TarjetaTransporte(doc, saldo);
+          } catch (err) {
+            console.error(`Error al obtener saldo para documento ${doc.id}:`, err);
+
+            return new TarjetaTransporte(doc, 0);
+          }
+        })
+    );
+
+    tarjetas.value = tarjetasConSaldo;
   } catch (err) {
     error.value = 'Error al obtener los documentos';
     console.error(err);
@@ -53,6 +52,7 @@ onMounted(async () => {
     loading.value = false;
   }
 });
+
 </script>
 
 <template>

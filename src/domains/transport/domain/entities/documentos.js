@@ -1,12 +1,25 @@
 export class Documentos {
-    /**
-     * @param {{id:number, email: string, tipo:string, numero: string, estado: string}}
-     */
-    constructor({id, usuarioId, tipo, numero, estado }) {
+    constructor({
+                    id,
+                    userId,
+                    documentNumber,
+                    fullName,
+                    type,
+                    balance,
+                    status,
+                    issueDate,
+                    expirationDate,
+                    filePath
+                }) {
         this.id = id;
-        this.usuarioId = usuarioId;
-        this.tipo = tipo;
-        this.numero = numero;
-        this.estado = estado;
+        this.userId = userId;
+        this.documentNumber = documentNumber;
+        this.fullName = fullName;
+        this.type = type;
+        this.balance = balance;
+        this.status = status;
+        this.issueDate = new Date(issueDate);
+        this.expirationDate = new Date(expirationDate);
+        this.filePath = filePath;
     }
 }
