@@ -61,31 +61,21 @@ const chartDataBar = ref({
 
 const chartOptions = {
   responsive: true,
-  maintainAspectRatio: false, // Permite controlar altura manualmente
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       display: true,
-      labels: {
-        color: '#334155'
-      }
+      labels: { color: '#334155' }
     }
   },
   scales: {
     x: {
-      ticks: {
-        color: '#475569'
-      },
-      grid: {
-        display: false
-      }
+      ticks: { color: '#475569' },
+      grid: { display: false }
     },
     y: {
-      ticks: {
-        color: '#475569'
-      },
-      grid: {
-        color: 'rgba(0,0,0,0.05)'
-      }
+      ticks: { color: '#475569' },
+      grid: { color: 'rgba(0,0,0,0.05)' }
     }
   }
 }
@@ -103,46 +93,40 @@ const descargarGrafico = (id, formato = 'png') => {
 // === Cargar datos ===
 onMounted(async () => {
   try {
-    const usuarioResp = await apiService.getUsuario(1)
-    user.value = usuarioResp.data
+    const sessionStr = localStorage.getItem('kapakid:user');
+    let userId = 1;
 
-    const pagosResp = await apiService.getPagosPorUsuario(1)
-    pagos.value = pagosResp.data || [] // Asegura que no sea undefined
+    if (sessionStr) {
+      const session = JSON.parse(sessionStr);
+      userId = session.id;
+      user.value.nombre = session.nombre;
+    }
 
-    // Procesar datos para los gráficos solo si hay pagos
+    const usuarioResp = await apiService.getUsuario(userId);
+    user.value = usuarioResp.data;
+
+    const pagosResp = await apiService.getPagosPorUsuario(userId);
+    pagos.value = pagosResp.data || [];
+
     if (pagos.value.length > 0) {
       const meses = {}
       const categorias = {}
       pagos.value.forEach(p => {
         const fecha = new Date(p.fecha)
-        if (isNaN(fecha.getTime())) return // Salta fechas inválidas
+        if (isNaN(fecha.getTime())) return
         const mes = fecha.toLocaleString('es-PE', { month: 'short' })
         meses[mes] = (meses[mes] || 0) + p.monto
         categorias[p.servicio] = (categorias[p.servicio] || 0) + p.monto
       })
-
-      chartDataLine.value.labels = Object.keys(meses).sort() // Ordena meses
+      chartDataLine.value.labels = Object.keys(meses).sort()
       chartDataLine.value.datasets[0].data = Object.values(meses)
 
       chartDataBar.value.labels = Object.keys(categorias)
       chartDataBar.value.datasets[0].data = Object.values(categorias)
-    } else {
-      // Datos de fallback para testing (comenta si usas API real)
-      /*
-      chartDataLine.value.labels = ['oct.', 'nov.']
-      chartDataLine.value.datasets[0].data = [125.5, 44.9]
-      chartDataBar.value.labels = ['Recarga Móvil', 'Metro', 'Lima Bus', 'Metropolitano', 'Netflix', 'Spotify', 'Gimnasio']
-      chartDataBar.value.datasets[0].data = [35, 2, 3, 5.5, 29.9, 22.9, 90]
-      */
     }
   } catch (error) {
     console.error("Error al cargar datos:", error)
     user.value = { nombre: 'Invitado' }
-    // Datos de fallback en caso de error
-    chartDataLine.value.labels = ['oct.', 'nov.']
-    chartDataLine.value.datasets[0].data = [125.5, 44.9]
-    chartDataBar.value.labels = ['Recarga Móvil', 'Metro']
-    chartDataBar.value.datasets[0].data = [35, 2]
   }
 })
 </script>
@@ -153,28 +137,24 @@ onMounted(async () => {
     <header class="header">
       <div class="welcome">
         <br><br>
-        <h2>👋 Bienvenido, {{ user.nombre }}</h2>
+        <h2>Bienvenido, {{ user.nombre }}</h2>
         <p>Resumen general de tu cuenta</p>
       </div>
     </header>
     <section class="main-grid">
-      <!-- Balance -->
       <div class="full-width-card">
         <BalanceCard />
       </div>
-      <!-- Documentos y pagos pendientes -->
       <div class="row">
         <DocumentsCard />
         <PendingPaymentsCard />
       </div>
-      <!-- Doble gráfico en fila 50/50 -->
       <div class="charts-row">
         <div class="chart-card">
           <div class="chart-header">
             <h3>Evolución de tu balance</h3>
             <div class="actions">
               <button @click="descargarGrafico('lineChart', 'png')">🖼️ PNG</button>
-              <!-- Nota: PDF requiere lib extra como jsPDF; por ahora solo PNG -->
             </div>
           </div>
           <div class="chart-container">
@@ -193,7 +173,6 @@ onMounted(async () => {
           </div>
         </div>
       </div>
-      <!-- Notificaciones y perfil -->
       <div class="row">
         <NotificationsCard />
         <div class="right-column">
@@ -203,10 +182,14 @@ onMounted(async () => {
       </div>
     </section>
   </div>
-
 </template>
 
 <style scoped>
+/* Reset básico para el componente */
+* {
+  box-sizing: border-box;
+}
+
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -231,12 +214,10 @@ onMounted(async () => {
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
+  line-height: 1.2;
 }
 
 .welcome p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 6px;
   font-size: 1rem;
   color: #e2e8f0;
@@ -248,29 +229,37 @@ onMounted(async () => {
   flex-direction: column;
   gap: 25px;
   padding: 30px;
+  width: 100%;
+  max-width: 1400px; /* Evita que se estire demasiado en pantallas gigantes */
+  margin: 0 auto;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
+  width: 100%;
 }
 
+/* Cálculo exacto para 2 columnas con gap de 25px:
+   50% del ancho - la mitad del gap (12.5px)
+*/
 .row > * {
-  flex: 1 1 48%;
+  flex: 1 1 calc(50% - 12.5px);
+  min-width: 300px; /* Evita que se aplasten demasiado antes del breakpoint */
 }
 
 .right-column {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  flex: 1 1 48%;
+  flex: 1 1 calc(50% - 12.5px);
 }
 
-/* Doble gráfico en fila exacta 50/50 */
+/* Charts Row */
 .charts-row {
   display: flex;
-  flex-wrap: nowrap; /* Evita wrap para mantener en fila */
+  flex-wrap: nowrap; /* En escritorio se mantiene en línea */
   gap: 25px;
   width: 100%;
 }
@@ -281,17 +270,13 @@ onMounted(async () => {
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform 0.2s ease;
-  flex: 1; /* Cada uno toma exactamente 50% del contenedor, menos gap */
-  min-width: 0; /* Permite shrink si es necesario */
+  flex: 1;
+  min-width: 0; /* Vital para que ChartJS funcione bien en Flexbox */
+  width: 100%;
 }
 
 .chart-card:hover {
-  transform: scale(1.01);
-}
-
-.chart-card h3 {
-  margin-bottom: 15px;
-  color: #1e3a8a;
+  transform: translateY(-2px); /* Efecto sutil */
 }
 
 .chart-header {
@@ -299,12 +284,19 @@ onMounted(async () => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+  flex-wrap: wrap; /* Permite que el botón baje si el título es muy largo */
+  gap: 10px;
+}
+
+.chart-card h3 {
+  margin: 0;
+  color: #1e3a8a;
+  font-size: 1.1rem;
 }
 
 .chart-container {
   position: relative;
-  height: 300px; /* Altura fija para que los gráficos se vean */
-  min-height: 250px; /* Mínimo en mobile */
+  height: 300px;
   width: 100%;
 }
 
@@ -312,24 +304,26 @@ onMounted(async () => {
   background: #2563eb;
   color: white;
   border: none;
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 8px;
-  margin-left: 6px;
   cursor: pointer;
   transition: 0.2s;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
 }
 
 .actions button:hover {
   background: #1e40af;
 }
 
-/* Full width card (Balance) */
 .full-width-card {
   width: 100%;
 }
 
-/* Responsive */
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================= */
+
+/* Tablet (menor a 1024px) */
 @media (max-width: 1024px) {
   .main-grid {
     padding: 20px;
@@ -339,58 +333,59 @@ onMounted(async () => {
   .header {
     padding: 30px 20px;
   }
-
-  .welcome h2 {
-    font-size: 1.75rem;
-  }
 }
 
+/* Mobile y Tablet pequeña (menor a 768px) */
 @media (max-width: 768px) {
+  /* Rompemos la fila de gráficos para que sea columna */
   .charts-row {
     flex-direction: column;
-    flex-wrap: wrap; /* Permite stack en mobile */
   }
 
-  .chart-card {
-    flex: 1 1 100%; /* En mobile, cada uno ocupa 100% */
-  }
-
+  /* Rompemos las filas generales */
   .row {
     flex-direction: column;
   }
 
+  /* Forzamos que todo ocupe el 100% */
   .row > *,
-  .right-column > * {
+  .right-column,
+  .chart-card {
     flex: 1 1 100%;
+    width: 100%;
+    min-width: 100%; /* Asegura que ocupe todo el ancho */
   }
 
+  /* Header centrado */
   .header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Centrar horizontalmente */
     text-align: center;
-    gap: 10px;
-    padding: 20px;
+    gap: 15px;
+  }
+
+  .welcome {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .welcome h2 {
     font-size: 1.5rem;
+    justify-content: center;
+  }
+
+  .welcome p {
+    justify-content: center;
   }
 
   .chart-container {
-    height: 250px;
-  }
-
-  .actions {
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-
-  .actions button {
-    margin-left: 0;
-    margin-bottom: 5px;
+    height: 250px; /* Un poco más bajo en móvil */
   }
 }
 
+/* Mobile pequeño (menor a 480px) */
 @media (max-width: 480px) {
   .main-grid {
     padding: 15px;
@@ -398,23 +393,26 @@ onMounted(async () => {
   }
 
   .header {
-    padding: 15px;
+    padding: 20px 15px;
   }
 
   .welcome h2 {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
   }
 
-  .welcome p {
-    font-size: 0.875rem;
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .chart-container {
-    height: 200px;
-  }
-
-  .chart-card {
-    padding: 15px;
+    height: 220px;
   }
 }
 </style>
