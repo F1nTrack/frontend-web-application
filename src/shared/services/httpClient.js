@@ -1,5 +1,5 @@
 ﻿
-const BASE = 'https://kapak-fake-api.onrender.com';
+const BASE = 'https://protectx-backend-production-2845.up.railway.app/api';
 
 export const http = {
     async get(url) {

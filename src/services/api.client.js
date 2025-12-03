@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'https://kapak-fake-api.onrender.com';
+const baseURL = 'https://protectx-backend-production-2845.up.railway.app/api';
 console.log('API Base URL:', baseURL);
 
 const apiClient = axios.create({
